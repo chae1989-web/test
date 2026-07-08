@@ -1,0 +1,298 @@
+<title>러닝 위클리 대시보드</title>
+<style>
+  :root {
+    --bg: #f5f3ed;
+    --surface: #ffffff;
+    --surface-sunken: #eeece4;
+    --border: #ddd9cd;
+    --text: #20261f;
+    --text-muted: #6b7266;
+    --text-faint: #9a9f92;
+    --accent: #33613f;
+    --accent-tint: #e7efe4;
+    --accent-tint-border: #c7dbc4;
+    --warn: #9c6a1f;
+    --warn-tint: #f5ecda;
+    --miss: #96473d;
+    --miss-tint: #f5e6e2;
+    --rest-tint: #eceae3;
+    --mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+    --sans: -apple-system, "Segoe UI", system-ui, sans-serif;
+  }
+  :root[data-theme="dark"] {
+    --bg: #12160f;
+    --surface: #1a2016;
+    --surface-sunken: #161b13;
+    --border: #2b3226;
+    --text: #e8ece2;
+    --text-muted: #9aa392;
+    --text-faint: #656e5f;
+    --accent: #7fbe8c;
+    --accent-tint: #1f2b1e;
+    --accent-tint-border: #33472f;
+    --warn: #d9a851;
+    --warn-tint: #332a17;
+    --miss: #d98f83;
+    --miss-tint: #34211d;
+    --rest-tint: #1e231a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12160f;
+      --surface: #1a2016;
+      --surface-sunken: #161b13;
+      --border: #2b3226;
+      --text: #e8ece2;
+      --text-muted: #9aa392;
+      --text-faint: #656e5f;
+      --accent: #7fbe8c;
+      --accent-tint: #1f2b1e;
+      --accent-tint-border: #33472f;
+      --warn: #d9a851;
+      --warn-tint: #332a17;
+      --miss: #d98f83;
+      --miss-tint: #34211d;
+      --rest-tint: #1e231a;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 28px 20px 60px;
+    line-height: 1.45;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  h1 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    margin: 4px 0 2px;
+  }
+  .week-range {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+  }
+
+  .today-card {
+    background: var(--accent-tint);
+    border: 1px solid var(--accent-tint-border);
+    border-radius: 10px;
+    padding: 20px 20px 18px;
+    margin-bottom: 28px;
+  }
+  .today-card .label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .today-card .workout-name {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 6px 0 10px;
+    text-wrap: balance;
+  }
+  .today-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .stat .k {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .stat .v {
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  .today-note {
+    font-size: 13px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--accent-tint-border);
+    padding-top: 10px;
+    margin-top: 4px;
+  }
+
+  .week-list {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .day-row {
+    display: grid;
+    grid-template-columns: 76px 1fr auto;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 16px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .day-row:last-child { border-bottom: none; }
+  .day-row.is-past { opacity: 0.55; }
+  .day-row.is-today { background: var(--accent-tint); }
+  .day-row.is-rest { background: var(--surface-sunken); }
+
+  .day-date {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .day-date .dow {
+    display: block;
+    font-size: 11px;
+    color: var(--text-faint);
+    margin-top: 1px;
+  }
+  .day-row.is-today .day-date, .day-row.is-today .day-date .dow { color: var(--accent); font-weight: 700; }
+
+  .day-workout .name {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .day-workout .target {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .chip {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 4px 9px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  .chip.today { background: var(--accent); color: var(--surface); }
+  .chip.upcoming { background: var(--surface-sunken); color: var(--text-muted); border: 1px solid var(--border); }
+  .chip.rest { background: transparent; color: var(--text-faint); }
+  .chip.pre-plan { background: transparent; color: var(--text-faint); font-style: italic; font-weight: 400; }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    margin-top: 18px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-faint);
+  }
+  .legend span { white-space: nowrap; }
+
+  footer {
+    margin-top: 24px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-faint);
+  }
+</style>
+
+<p class="eyebrow">Running Plan · NSM Base</p>
+<h1>이번 주 러닝 대시보드</h1>
+<p class="week-range">2026-07-06 (월) – 2026-07-12 (일) · 회복 전환주</p>
+
+<div class="today-card">
+  <div class="label">오늘 · 7/8 (수)</div>
+  <div class="workout-name">이지런 40min</div>
+  <div class="today-stats">
+    <div class="stat"><div class="k">심박 상한</div><div class="v">≤145 bpm</div></div>
+    <div class="stat"><div class="k">목표 시간</div><div class="v">40:00</div></div>
+    <div class="stat"><div class="k">상태</div><div class="v">진행 전</div></div>
+  </div>
+  <div class="today-note">간밤 수면 7.3h · 점수 78(FAIR), HRV 93ms로 균형 범위 근접 — 컨디션 정상, 계획대로 진행.</div>
+</div>
+
+<div class="week-list">
+  <div class="day-row is-past">
+    <div class="day-date">07/06<span class="dow">월</span></div>
+    <div class="day-workout">
+      <div class="name">8x3min @15K pace</div>
+      <div class="target">7.68km · 41:20 · 평균 133bpm</div>
+    </div>
+    <span class="chip pre-plan">계획 이전</span>
+  </div>
+  <div class="day-row is-past is-rest">
+    <div class="day-date">07/07<span class="dow">화</span></div>
+    <div class="day-workout">
+      <div class="name">활동 없음</div>
+      <div class="target">계획 없음(자동화 이전)</div>
+    </div>
+    <span class="chip rest">휴식</span>
+  </div>
+  <div class="day-row is-today">
+    <div class="day-date">07/08<span class="dow">수</span></div>
+    <div class="day-workout">
+      <div class="name">이지런 40min</div>
+      <div class="target">HR ≤145bpm</div>
+    </div>
+    <span class="chip today">오늘</span>
+  </div>
+  <div class="day-row">
+    <div class="day-date">07/09<span class="dow">목</span></div>
+    <div class="day-workout">
+      <div class="name">이지런 40min</div>
+      <div class="target">HR ≤145bpm</div>
+    </div>
+    <span class="chip upcoming">예정</span>
+  </div>
+  <div class="day-row is-rest">
+    <div class="day-date">07/10<span class="dow">금</span></div>
+    <div class="day-workout">
+      <div class="name">휴식</div>
+      <div class="target">계획된 세션 없음</div>
+    </div>
+    <span class="chip rest">휴식</span>
+  </div>
+  <div class="day-row">
+    <div class="day-date">07/11<span class="dow">토</span></div>
+    <div class="day-workout">
+      <div class="name">롱런 복원 12km</div>
+      <div class="target">HR ≤150bpm</div>
+    </div>
+    <span class="chip upcoming">예정</span>
+  </div>
+  <div class="day-row">
+    <div class="day-date">07/12<span class="dow">일</span></div>
+    <div class="day-workout">
+      <div class="name">회복런 5km</div>
+      <div class="target">HR ≤135bpm</div>
+    </div>
+    <span class="chip upcoming">예정</span>
+  </div>
+</div>
+
+<div class="legend">
+  <span>■ 오늘</span>
+  <span>■ 예정</span>
+  <span>■ 휴식</span>
+  <span>■ 지난 날(회색) — 수행률은 계획이 있던 날부터 계산</span>
+</div>
+
+<footer>running-plan/plan.md 기준 자동 생성 · VDOT 51 · NSM 베이스 도입 1주차</footer>
