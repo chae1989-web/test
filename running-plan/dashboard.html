@@ -279,6 +279,7 @@
     border-bottom: 1px solid var(--border);
   }
   .day-row:last-child { border-bottom: none; }
+  .day-row.is-past { opacity: 0.5; }
   .stripe { align-self: stretch; border-radius: 3px; }
   .stripe.type-easy { background: var(--pine); }
   .stripe.type-subt { background: var(--gold); }
@@ -323,6 +324,7 @@
   .chip.long { background: var(--tide-tint); color: var(--tide); }
   .chip.easy { background: var(--pine-tint); color: var(--pine); }
   .chip.rest { background: transparent; color: var(--text-faint); font-weight: 600; }
+  .chip.preplan { background: transparent; color: var(--text-faint); font-weight: 500; font-style: italic; }
 
   .legend {
     display: flex;
@@ -343,83 +345,63 @@
   }
 </style>
 
-<p class="eyebrow">Running Plan · NSM 베이스 도입 1주차</p>
+<p class="eyebrow">Running Plan · 회복 전환주</p>
 <h1>이번 주 러닝 대시보드</h1>
 <div class="route-rule"></div>
-<p class="week-range"><b>2026-07-13 (월) – 07-19 (일)</b> · VDOT 51</p>
-
-<section>
-  <div class="section-title">지난주 요약 (07-06 – 07-12)</div>
-  <div class="recap-card">
-    <div class="recap-head">
-      <span class="title">회복 전환주 · 평균 수행률</span>
-      <span class="recap-score">93<span>%</span></span>
-    </div>
-    <div class="recap-strip">
-      <div class="recap-day"><div class="d">월 06</div><div class="pct na">계획전</div></div>
-      <div class="recap-day"><div class="d">화 07</div><div class="pct na">휴식</div></div>
-      <div class="recap-day"><div class="d">수 08</div><div class="pct success">100%</div></div>
-      <div class="recap-day"><div class="d">목 09</div><div class="pct warn">78%</div></div>
-      <div class="recap-day"><div class="d">금 10</div><div class="pct na">휴식</div></div>
-      <div class="recap-day"><div class="d">토 11</div><div class="pct success">97%</div></div>
-      <div class="recap-day"><div class="d">일 12</div><div class="pct success">102%</div></div>
-    </div>
-    <p class="recap-note">※ 07-13 기준 미리보기 예시 — 실제 자동 루틴은 매일 이 구간을 완료된 활동으로 갱신합니다.</p>
-  </div>
-</section>
+<p class="week-range"><b>2026-07-06 (월) – 07-12 (일)</b> · VDOT 51</p>
 
 <section>
   <div class="section-title">오늘</div>
   <div class="today-card">
-    <div class="label">7/13 (월) · NSM 베이스 1주차 시작</div>
+    <div class="label">7/8 (수) · 회복 전환주</div>
     <div class="workout-name">이지런 40min</div>
     <div class="today-stats">
       <div class="stat"><div class="k">심박 상한</div><div class="v">≤145</div></div>
       <div class="stat"><div class="k">목표 시간</div><div class="v">40:00</div></div>
       <div class="stat"><div class="k">페이스 존</div><div class="v">5:35–6:05</div></div>
     </div>
-    <div class="today-note">새 NSM 주차 첫날 — 완전 이지 페이스로 시작, 목요일 sub-T(3min×8)를 위해 오늘은 다리를 가볍게 유지.</div>
+    <div class="today-note">간밤 수면 7.3h·78(FAIR), HRV 93ms로 균형 범위 근접 — 지난주 이어지던 저하세가 회복 중. 컨디션 양호, 계획대로 진행.</div>
   </div>
 </section>
 
 <section>
   <div class="section-title">이번 주 나머지</div>
   <div class="week-list">
-    <div class="day-row">
-      <div class="stripe type-subt"></div>
-      <div class="day-date">07/14<span class="dow">화</span></div>
-      <div class="day-workout"><div class="name">NSM short v2 (3min×8)</div><div class="target">4:16–4:22/km · rest 60s 도보</div></div>
-      <span class="chip subt">NSM-S</span>
-    </div>
-    <div class="day-row">
+    <div class="day-row is-past">
       <div class="stripe type-rest"></div>
-      <div class="day-date">07/15<span class="dow">수</span></div>
-      <div class="day-workout"><div class="name">휴식</div><div class="target">계획된 세션 없음</div></div>
-      <span class="chip rest">휴식</span>
+      <div class="day-date">07/06<span class="dow">월</span></div>
+      <div class="day-workout"><div class="name">8x3min @15K pace</div><div class="target">7.68km · 41:20 · 평균 133bpm</div></div>
+      <span class="chip preplan">계획 이전</span>
     </div>
-    <div class="day-row">
-      <div class="stripe type-subt"></div>
-      <div class="day-date">07/16<span class="dow">목</span></div>
-      <div class="day-workout"><div class="name">NSM long v2 (12min×2)</div><div class="target">4:27–4:35/km · rest 60s 도보</div></div>
-      <span class="chip subt">NSM-L</span>
-    </div>
-    <div class="day-row">
+    <div class="day-row is-past">
       <div class="stripe type-rest"></div>
-      <div class="day-date">07/17<span class="dow">금</span></div>
-      <div class="day-workout"><div class="name">휴식</div><div class="target">계획된 세션 없음</div></div>
+      <div class="day-date">07/07<span class="dow">화</span></div>
+      <div class="day-workout"><div class="name">활동 없음</div><div class="target">계획 없음(자동화 이전)</div></div>
       <span class="chip rest">휴식</span>
     </div>
     <div class="day-row">
       <div class="stripe type-easy"></div>
-      <div class="day-date">07/18<span class="dow">토</span></div>
+      <div class="day-date">07/09<span class="dow">목</span></div>
       <div class="day-workout"><div class="name">이지런 40min</div><div class="target">HR ≤145bpm</div></div>
       <span class="chip easy">EASY</span>
     </div>
     <div class="day-row">
+      <div class="stripe type-rest"></div>
+      <div class="day-date">07/10<span class="dow">금</span></div>
+      <div class="day-workout"><div class="name">휴식</div><div class="target">계획된 세션 없음</div></div>
+      <span class="chip rest">휴식</span>
+    </div>
+    <div class="day-row">
       <div class="stripe type-long"></div>
-      <div class="day-date">07/19<span class="dow">일</span></div>
+      <div class="day-date">07/11<span class="dow">토</span></div>
       <div class="day-workout"><div class="name">롱런 복원 12km</div><div class="target">HR ≤150bpm</div></div>
       <span class="chip long">LONG RUN</span>
+    </div>
+    <div class="day-row">
+      <div class="stripe type-easy"></div>
+      <div class="day-date">07/12<span class="dow">일</span></div>
+      <div class="day-workout"><div class="name">회복런 5km</div><div class="target">HR ≤135bpm</div></div>
+      <span class="chip easy">EASY</span>
     </div>
   </div>
 </section>
@@ -432,5 +414,6 @@
   <span><i class="dot" style="background:var(--warn)"></i>70–89% 수행</span>
   <span><i class="dot" style="background:var(--miss)"></i>70% 미만</span>
 </div>
+<p style="font-size:11.5px;color:var(--text-faint);font-style:italic;margin-top:10px;">※ 7/6·7/7은 이 자동화가 시작되기 전이라 수행률 채점 대상에서 제외. 내일(7/9)부터 지난 날짜에 실제 수행률(%)이 표시됩니다.</p>
 
 <footer>running-plan/plan.md 기준 자동 생성 · 10K B레이스 10/18 · 10K A 11/1 · HM 11/15</footer>
