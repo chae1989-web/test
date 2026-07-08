@@ -55,9 +55,9 @@
 | 1623948908 | 이지런 40min (HR<=145) | 이지런 |
 | 1623948922 | 롱런 복원 12km (HR<=150) | 롱런(회복형, 초반 주차) |
 | 1623948926 | 회복런 5km (HR<=135) | 회복런 |
-| 1625366899 | NSM short(3min x 8) v2 | sub-T short (4:16–4:22/km), rest 60s |
-| 1625367023 | NSM mid(6min x 4) v2 | sub-T mid (4:21–4:28/km), rest 60s |
-| 1625367054 | NSM long(12min x 2) v2 | sub-T long (4:27–4:35/km), rest 60s |
+| 1625366899 | NSM short(3min x 8) v2 | **NSM-S** — sub-threshold short (4:16–4:22/km), rest 60s |
+| 1625367023 | NSM mid(6min x 4) v2 | **NSM-M** — sub-threshold mid (4:21–4:28/km), rest 60s |
+| 1625367054 | NSM long(12min x 2) v2 | **NSM-L** — sub-threshold long (4:27–4:35/km), rest 60s. 대시보드 라벨상 "LONG RUN"(이지 장거리, workout_id 1623948922)과 다른 것이니 혼동 금지 |
 
 반복수를 다르게 해야 하는 경우, 위 템플릿과 동일한 페이스 존을 사용해 새 workout을 `upload_workout`으로 생성하고 이 표에 추가한다. (`upload_workout` 참고: pace.zone target은 targetValueOne=느린 페이스(낮은 m/s), targetValueTwo=빠른 페이스(높은 m/s) 오름차순으로 넣을 것. rest 스텝은 stepType "rest"(id 5) 사용 — "recovery"(id 4)는 조깅 회복이라 여기선 쓰지 않음.)
 
@@ -108,7 +108,7 @@
 1. 이번 주(월~일)에 아직 미등록 구간이 있으면 이 표의 규칙(ACWR 0.8~1.3, 롱런 +10%룰, 디로드 주, short+mid+long 또는 회복 저조시 short+long)으로 채워서 가민에 등록
 2. 오늘 컨디션(readiness/HRV/수면) 확인 → 저조 시 오늘 세션을 이지런/회복런으로 교체
 3. 이번 주 전체 스케줄 + 지난 날짜의 실제 수행(get_activities_fordate, sub-threshold는 get_activity_split_summaries)을 "수행률(%) 평가 방법" 섹션 규칙대로 대조해 채점
-4. `running-plan/dashboard.html`을 이번 주 기준으로 갱신하고 Artifact로 같은 경로에 재배포(URL 고정) — 오늘 워크아웃은 상단 강조 카드, 나머지 요일은 아래 리스트(타입별 색: 이지런 pine/롱런 tide/sub-T gold — 롱런과 이지런 색 절대 동일하게 쓰지 말 것), 지난주는 "지난주 요약" 카드에 요일별 %/상태로 표시
+4. `running-plan/dashboard.html`을 이번 주 기준으로 갱신하고 Artifact로 같은 경로에 재배포(URL 고정) — 오늘 워크아웃은 상단 강조 카드, 나머지 요일은 아래 리스트(타입별 색·라벨: **EASY**=이지런/회복런=pine, **LONG RUN**=이지 장거리(예: 롱런 복원 12km)=tide, **NSM-S/NSM-M/NSM-L**=sub-threshold short/mid/long 세 포맷 전부=gold — "LONG RUN"과 "NSM-L"은 이름이 비슷해도 서로 다른 것(이지 장거리 vs sub-threshold 12분 인터벌)이니 색·라벨 혼동 금지), 지난주는 "지난주 요약" 카드에 요일별 %/상태로 표시
 5. 세션에는 한 줄 요약 + 대시보드 링크만 전송(전체 내용은 대시보드에서 확인)
 6. 실행 로그 기록 후 plan.md·dashboard.html commit + push
 
