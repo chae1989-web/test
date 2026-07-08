@@ -15,6 +15,8 @@
     --pine: #0f5c4f;
     --pine-tint: #e3f2ee;
     --pine-tint-border: #bfe1d7;
+    --tide: #1f5f8b;
+    --tide-tint: #e5f0f7;
     --gold: #d98d1f;
     --gold-tint: #fbf0da;
     --success: #2f9e5b;
@@ -41,6 +43,8 @@
     --pine: #56b79c;
     --pine-tint: #15271f;
     --pine-tint-border: #29473b;
+    --tide: #5fb8d9;
+    --tide-tint: #16262f;
     --gold: #e7b563;
     --gold-tint: #332913;
     --success: #5bcb8d;
@@ -66,6 +70,8 @@
       --pine: #56b79c;
       --pine-tint: #15271f;
       --pine-tint-border: #29473b;
+      --tide: #5fb8d9;
+      --tide-tint: #16262f;
       --gold: #e7b563;
       --gold-tint: #332913;
       --success: #5bcb8d;
@@ -274,9 +280,9 @@
   }
   .day-row:last-child { border-bottom: none; }
   .stripe { align-self: stretch; border-radius: 3px; }
-  .stripe.type-easy { background: var(--pine); opacity: 0.55; }
+  .stripe.type-easy { background: var(--pine); }
   .stripe.type-subt { background: var(--gold); }
-  .stripe.type-long { background: var(--pine); }
+  .stripe.type-long { background: var(--tide); }
   .stripe.type-rest { background: var(--border); }
 
   .day-date {
@@ -314,7 +320,7 @@
     white-space: nowrap;
   }
   .chip.subt { background: var(--gold-tint); color: var(--gold); }
-  .chip.long { background: var(--pine-tint); color: var(--pine); }
+  .chip.long { background: var(--tide-tint); color: var(--tide); }
   .chip.easy { background: var(--pine-tint); color: var(--pine); }
   .chip.rest { background: transparent; color: var(--text-faint); font-weight: 600; }
 
@@ -419,7 +425,8 @@
 </section>
 
 <div class="legend">
-  <span><i class="dot" style="background:var(--pine)"></i>이지·롱런</span>
+  <span><i class="dot" style="background:var(--pine)"></i>이지런</span>
+  <span><i class="dot" style="background:var(--tide)"></i>롱런</span>
   <span><i class="dot" style="background:var(--gold)"></i>sub-threshold</span>
   <span><i class="dot" style="background:var(--success)"></i>90%+ 수행</span>
   <span><i class="dot" style="background:var(--warn)"></i>70–89% 수행</span>

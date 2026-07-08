@@ -61,6 +61,24 @@
 
 반복수를 다르게 해야 하는 경우, 위 템플릿과 동일한 페이스 존을 사용해 새 workout을 `upload_workout`으로 생성하고 이 표에 추가한다. (`upload_workout` 참고: pace.zone target은 targetValueOne=느린 페이스(낮은 m/s), targetValueTwo=빠른 페이스(높은 m/s) 오름차순으로 넣을 것. rest 스텝은 stepType "rest"(id 5) 사용 — "recovery"(id 4)는 조깅 회복이라 여기선 쓰지 않음.)
 
+## 수행률(%) 평가 방법
+
+지난 날짜의 계획 대비 실제 수행을 아래 규칙으로 점수화한다. **휴식일과 "계획 이전"(자동화 시작 전) 날짜는 평가 대상에서 제외**하고, 주간 평균도 이 날들을 뺀 값으로 낸다.
+
+1. `get_activities_fordate(날짜)`로 그 날 러닝 액티비티를 찾는다. 없으면 **0%(미실시)**.
+2. 워크아웃 종류에 따라 다르게 채점:
+   - **이지런/회복런/롱런(연속형, 시간 또는 거리 목표 + HR 상한)**
+     - `volume_ratio = min(실제값 / 목표값, 1.0)` — 이지런은 duration_seconds, 롱런·회복런은 distance_meters 기준
+     - HR 판정: `avg_hr_bpm`이 상한 이하면 감점 없음. 상한 초과 시 초과폭에 따라 감점(1~5bpm 초과 -5%p, 5~10bpm -15%p, 10bpm+ -30%p) — 이지런의 목적 자체가 "진짜 이지"이므로 초과는 감점 대상
+     - `점수 = round(volume_ratio*100) - HR감점`, 0~100으로 clamp
+   - **sub-threshold(NSM short/mid/long)**
+     - `get_activity_split_summaries(activity_id)`에서 `splitType == "INTERVAL_ACTIVE"`인 항목을 찾는다(실측 확인: 8x3min 세션에서 noOfSplits=8, averageSpeed로 페이스 역산 가능)
+     - `reps_ratio = min(noOfSplits / 계획 반복수, 1.0)`
+     - `avg_pace_sec_per_km = 1000 / averageSpeed`를 계획 페이스 밴드와 비교 → 밴드 안이면 pace_score=100, 밴드 밖이면 5초/km 벗어날 때마다 -10%p
+     - `점수 = round(0.5*reps_ratio*100 + 0.5*pace_score)`
+3. 상태 색상: **90%+ success(초록) / 70~89% warn(황) / 70% 미만 miss(빨강)**
+4. 주간 요약 % = 평가 대상 일자 점수의 평균
+
 ## 매크로 periodization (2026-07-08 → 11-15, 약 19주)
 
 주당 워크아웃 상한 4회 = 롱런 1 + sub-threshold 3(매주 short+mid+long 함께, 회복 저조 시 short+long 2개로 축소). 단계가 진행돼도 포맷을 바꾸지 않고 반복수/페이스만 조금씩 올린다. 3~4주마다 디로드 주 포함.
@@ -89,8 +107,8 @@
 **주간+일간 2개였던 걸 데일리 1개로 통합함(2026-07-08)** — 매일 아침 실행(trig_01MzgAJWDkh1wUkrpf9mZNy8, "러닝 데일리 대시보드"):
 1. 이번 주(월~일)에 아직 미등록 구간이 있으면 이 표의 규칙(ACWR 0.8~1.3, 롱런 +10%룰, 디로드 주, short+mid+long 또는 회복 저조시 short+long)으로 채워서 가민에 등록
 2. 오늘 컨디션(readiness/HRV/수면) 확인 → 저조 시 오늘 세션을 이지런/회복런으로 교체
-3. 이번 주 전체 스케줄 + 지난 날짜의 실제 수행(get_activities_fordate)을 대조해 수행률 평가
-4. `running-plan/dashboard.html`을 이번 주 기준으로 갱신하고 Artifact로 같은 경로에 재배포(URL 고정) — 오늘 워크아웃은 상단 강조 카드, 나머지 요일은 아래 리스트, 지난 날짜는 회색 처리 + 수행률 표시
+3. 이번 주 전체 스케줄 + 지난 날짜의 실제 수행(get_activities_fordate, sub-threshold는 get_activity_split_summaries)을 "수행률(%) 평가 방법" 섹션 규칙대로 대조해 채점
+4. `running-plan/dashboard.html`을 이번 주 기준으로 갱신하고 Artifact로 같은 경로에 재배포(URL 고정) — 오늘 워크아웃은 상단 강조 카드, 나머지 요일은 아래 리스트(타입별 색: 이지런 pine/롱런 tide/sub-T gold — 롱런과 이지런 색 절대 동일하게 쓰지 말 것), 지난주는 "지난주 요약" 카드에 요일별 %/상태로 표시
 5. 세션에는 한 줄 요약 + 대시보드 링크만 전송(전체 내용은 대시보드에서 확인)
 6. 실행 로그 기록 후 plan.md·dashboard.html commit + push
 
@@ -106,3 +124,4 @@
 - 2026-07-08 (일간 루틴 실행): 7/8 컨디션 확인 — 수면 7.3h/score 78 FAIR, HRV 93ms(균형 근접)로 개선 추세. 예정된 이지런 그대로 진행, 변경 없음.
 - 2026-07-08 (사용자 피드백 반영, 정정): (1) NSM 세션 구성 오류 발견 — 매주 short+mid+long 함께가 맞고 2세션만 가능할 때는 short+long 유지·mid 생략. (2) 리커버리는 조깅이 아니라 도보/완전휴식이 맞음. (3) 퀄리티 볼륨 비중 상한 20-25%→최대 30%까지 가능. (4) VDOT 47.7→51로 갱신(5/23 활동, 10K 환산 약 43:04). 이에 따라 NSM short/mid/long v1(VDOT47.7, workout_id 1599625769/1599627272/1599628026) 삭제, v2(VDOT51, rest=도보/완전휴식, workout_id 1625366899/1625367023/1625367054) 신규 생성. 1주차 7/16, 2주차 7/21·7/23 스케줄을 short+short에서 short+long(v2)으로 정정 완료. 매크로 표에 디로드 주 반영.
 - 2026-07-08 (사용자 요청, 아키텍처 변경): 주간+일간 루틴 2개 운영이 비효율적이라는 피드백으로 데일리 루틴 1개로 통합(trig_01XnJ4eUp3KyUYUVc7ypxpuX, trig_01VZVafCrYuMCTTusk9XJ2Cm 삭제 → trig_01MzgAJWDkh1wUkrpf9mZNy8 생성). 오늘 워크아웃 강조 + 이번 주 나머지 참고 + 지난 날짜 회색처리 + 수행률 평가를 보여주는 `running-plan/dashboard.html` 대시보드를 신설해 Artifact로 배포.
+- 2026-07-08 (사용자 피드백 반영, 정정 2): (1) 대시보드에서 롱런이 이지런과 같은 색(pine)으로 표시되던 버그 수정 — 롱런 전용 색상 `--tide`(파랑) 추가해 이지런(초록)과 명확히 구분. (2) 수행률(%) 평가 방법을 구체적으로 정의해 plan.md에 "수행률(%) 평가 방법" 섹션 신설 — 연속형(이지런/롱런/회복런)은 거리·시간 달성률+HR상한 감점, sub-threshold는 `get_activity_split_summaries`의 `INTERVAL_ACTIVE` 스플릿으로 반복수 달성률+평균 페이스 밴드 일치도로 채점. 데일리 루틴(trig_01MzgAJWDkh1wUkrpf9mZNy8 삭제 후 trig_01GhiRr7wZgMxH7C66bVQBNt로 재생성)에 이 규칙을 명시적으로 반영.
