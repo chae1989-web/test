@@ -342,6 +342,77 @@
   }
   .legend .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; }
 
+  /* weather */
+  .weather-strip {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+  .weather-tile {
+    flex: 1 1 0;
+    min-width: 76px;
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 6px 10px;
+  }
+  .weather-tile.is-best { border-color: var(--pine-tint-border); background: var(--pine-tint); }
+  .weather-tile .t {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--text-muted);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .weather-tile .temp {
+    font-family: var(--mono);
+    font-size: 19px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+  .weather-tile .hum {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+  .weather-tile .rain {
+    font-family: var(--mono);
+    font-size: 10px;
+    margin-top: 2px;
+    color: var(--tide);
+  }
+  .weather-note {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    margin-top: 10px;
+  }
+
+  /* acwr chart */
+  .acwr-card {
+    background: var(--surface-sunken);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px 12px;
+  }
+  .acwr-caption {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .acwr-chart { width: 100%; height: auto; display: block; }
+  .acwr-bar-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .acwr-axis-label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+  }
+
   footer {
     margin-top: 8px;
     font-family: var(--mono);
@@ -367,6 +438,43 @@
     </div>
     <div class="today-note">HRV 101ms로 BALANCED 복귀(주간평균 96ms). 다만 간밤 수면은 4.87h·61(FAIR)로 짧았음 — 오늘도 이지런이라 강도 조정은 필요 없지만, 짧게 수면 보충 권장.</div>
   </div>
+</section>
+
+<section>
+  <div class="section-title">오늘 날씨 (서울)</div>
+  <div class="weather-strip">
+    <div class="weather-tile">
+      <div class="t">09:00</div>
+      <div class="temp">24°</div>
+      <div class="hum">습도 95%</div>
+      <div class="rain">☔ 47%</div>
+    </div>
+    <div class="weather-tile is-best">
+      <div class="t">12:00</div>
+      <div class="temp">25°</div>
+      <div class="hum">습도 81%</div>
+      <div class="rain">☔ 23%</div>
+    </div>
+    <div class="weather-tile">
+      <div class="t">15:00</div>
+      <div class="temp">26°</div>
+      <div class="hum">습도 80%</div>
+      <div class="rain">☔ 60%</div>
+    </div>
+    <div class="weather-tile">
+      <div class="t">18:00</div>
+      <div class="temp">25°</div>
+      <div class="hum">습도 80%</div>
+      <div class="rain">☔ 30%</div>
+    </div>
+    <div class="weather-tile">
+      <div class="t">21:00</div>
+      <div class="temp">24°</div>
+      <div class="hum">습도 87%</div>
+      <div class="rain">☔ 53%</div>
+    </div>
+  </div>
+  <p class="weather-note">전반적으로 습하고 비 예보 있음 — <b>12시경</b>이 강수확률 23%로 상대적으로 낫지만 습도 81%는 여전히 높음. 더위·습도 부하 고려해 페이스는 목표 밴드보다 느슨하게, 수분 보충 필수.</p>
 </section>
 
 <section>
@@ -408,6 +516,40 @@
       <div class="day-workout"><div class="name">회복런 5km</div><div class="target">HR ≤135bpm</div></div>
       <span class="chip easy">EASY</span>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">훈련 부하 (ACWR)</div>
+  <div class="acwr-card">
+    <p class="acwr-caption">급성:만성 부하비 = 이번 주 볼륨 ÷ 최근 4주 평균 볼륨. 초록 밴드(0.8–1.3)가 안전 구간, 점선이 고위험 기준(1.5)</p>
+    <svg class="acwr-chart" viewBox="0 0 600 200" role="img" aria-label="주간 ACWR 추이, 6/8주 1.37, 6/15주 1.47, 6/22주 1.47, 6/29주 1.07, 7/6주 계획 0.66">
+      <rect x="40" y="46.25" width="540" height="43.75" fill="var(--success-tint)" />
+      <line x1="40" y1="160" x2="580" y2="160" stroke="var(--border)" stroke-width="1" />
+      <line x1="40" y1="27.5" x2="580" y2="27.5" stroke="var(--miss)" stroke-width="1" stroke-dasharray="4 4" opacity="0.6" />
+      <text x="584" y="31" class="acwr-axis-label" fill="var(--miss)">1.5</text>
+
+      <rect x="64" y="40.1" width="60" height="119.9" rx="3" fill="var(--warn)" />
+      <text x="94" y="32" text-anchor="middle" class="acwr-bar-label" fill="var(--warn)">1.37</text>
+      <text x="94" y="178" text-anchor="middle" class="acwr-axis-label" fill="var(--text-faint)">6/8</text>
+
+      <rect x="172" y="31.4" width="60" height="128.6" rx="3" fill="var(--warn)" />
+      <text x="202" y="23" text-anchor="middle" class="acwr-bar-label" fill="var(--warn)">1.47</text>
+      <text x="202" y="178" text-anchor="middle" class="acwr-axis-label" fill="var(--text-faint)">6/15</text>
+
+      <rect x="280" y="31.4" width="60" height="128.6" rx="3" fill="var(--warn)" />
+      <text x="310" y="23" text-anchor="middle" class="acwr-bar-label" fill="var(--warn)">1.47</text>
+      <text x="310" y="178" text-anchor="middle" class="acwr-axis-label" fill="var(--text-faint)">6/22</text>
+
+      <rect x="388" y="66.4" width="60" height="93.6" rx="3" fill="var(--success)" />
+      <text x="418" y="58" text-anchor="middle" class="acwr-bar-label" fill="var(--success)">1.07</text>
+      <text x="418" y="178" text-anchor="middle" class="acwr-axis-label" fill="var(--text-faint)">6/29</text>
+
+      <rect x="496" y="102.25" width="60" height="57.75" rx="3" fill="none" stroke="var(--tide)" stroke-width="2" stroke-dasharray="4 3" />
+      <text x="526" y="94" text-anchor="middle" class="acwr-bar-label" fill="var(--tide)">0.66*</text>
+      <text x="526" y="178" text-anchor="middle" class="acwr-axis-label" fill="var(--text-faint)">7/6</text>
+    </svg>
+    <p class="weather-note" style="margin-top:2px;">6/8~6/22주는 15K/30K pace·LT 인터벌이 이어지며 1.3대 후반까지 상승(주의 구간) — 이후 볼륨을 낮춘 회복 전환주(7/6~)가 정확히 필요했던 조정이었음을 보여줌. *7/6주는 계획 볼륨(~25km) 기준 진행중 수치.</p>
   </div>
 </section>
 
