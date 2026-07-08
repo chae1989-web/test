@@ -1,58 +1,79 @@
 <title>러닝 위클리 대시보드</title>
 <style>
   :root {
-    --bg: #f5f3ed;
+    --bg: #faf6ee;
     --surface: #ffffff;
-    --surface-sunken: #eeece4;
-    --border: #ddd9cd;
-    --text: #20261f;
-    --text-muted: #6b7266;
-    --text-faint: #9a9f92;
-    --accent: #33613f;
-    --accent-tint: #e7efe4;
-    --accent-tint-border: #c7dbc4;
-    --warn: #9c6a1f;
-    --warn-tint: #f5ecda;
-    --miss: #96473d;
-    --miss-tint: #f5e6e2;
-    --rest-tint: #eceae3;
+    --surface-sunken: #f1ecde;
+    --border: #e6dfcd;
+    --text: #211a10;
+    --text-muted: #766c56;
+    --text-faint: #a89c81;
+    --accent: #ff5a36;
+    --accent-ink: #b8381a;
+    --accent-tint: #ffede4;
+    --accent-tint-border: #ffc4a8;
+    --pine: #0f5c4f;
+    --pine-tint: #e3f2ee;
+    --pine-tint-border: #bfe1d7;
+    --gold: #d98d1f;
+    --gold-tint: #fbf0da;
+    --success: #2f9e5b;
+    --success-tint: #e4f5ea;
+    --warn: #d98d1f;
+    --warn-tint: #fbf0da;
+    --miss: #d64545;
+    --miss-tint: #fbe7e5;
     --mono: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", Consolas, monospace;
     --sans: -apple-system, "Segoe UI", system-ui, sans-serif;
   }
   :root[data-theme="dark"] {
-    --bg: #12160f;
-    --surface: #1a2016;
-    --surface-sunken: #161b13;
-    --border: #2b3226;
-    --text: #e8ece2;
-    --text-muted: #9aa392;
-    --text-faint: #656e5f;
-    --accent: #7fbe8c;
-    --accent-tint: #1f2b1e;
-    --accent-tint-border: #33472f;
-    --warn: #d9a851;
-    --warn-tint: #332a17;
-    --miss: #d98f83;
-    --miss-tint: #34211d;
-    --rest-tint: #1e231a;
+    --bg: #15100a;
+    --surface: #1f1810;
+    --surface-sunken: #251d13;
+    --border: #392c1c;
+    --text: #f6efe1;
+    --text-muted: #b6a88e;
+    --text-faint: #7d715a;
+    --accent: #ff8358;
+    --accent-ink: #ffb69c;
+    --accent-tint: #35201a;
+    --accent-tint-border: #5c3323;
+    --pine: #56b79c;
+    --pine-tint: #15271f;
+    --pine-tint-border: #29473b;
+    --gold: #e7b563;
+    --gold-tint: #332913;
+    --success: #5bcb8d;
+    --success-tint: #172d1e;
+    --warn: #e7b563;
+    --warn-tint: #332913;
+    --miss: #f0796c;
+    --miss-tint: #3a1c18;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #12160f;
-      --surface: #1a2016;
-      --surface-sunken: #161b13;
-      --border: #2b3226;
-      --text: #e8ece2;
-      --text-muted: #9aa392;
-      --text-faint: #656e5f;
-      --accent: #7fbe8c;
-      --accent-tint: #1f2b1e;
-      --accent-tint-border: #33472f;
-      --warn: #d9a851;
-      --warn-tint: #332a17;
-      --miss: #d98f83;
-      --miss-tint: #34211d;
-      --rest-tint: #1e231a;
+      --bg: #15100a;
+      --surface: #1f1810;
+      --surface-sunken: #251d13;
+      --border: #392c1c;
+      --text: #f6efe1;
+      --text-muted: #b6a88e;
+      --text-faint: #7d715a;
+      --accent: #ff8358;
+      --accent-ink: #ffb69c;
+      --accent-tint: #35201a;
+      --accent-tint-border: #5c3323;
+      --pine: #56b79c;
+      --pine-tint: #15271f;
+      --pine-tint-border: #29473b;
+      --gold: #e7b563;
+      --gold-tint: #332913;
+      --success: #5bcb8d;
+      --success-tint: #172d1e;
+      --warn: #e7b563;
+      --warn-tint: #332913;
+      --miss: #f0796c;
+      --miss-tint: #3a1c18;
     }
   }
 
@@ -61,59 +82,154 @@
     background: var(--bg);
     color: var(--text);
     font-family: var(--sans);
-    max-width: 640px;
+    max-width: 660px;
     margin: 0 auto;
-    padding: 28px 20px 60px;
+    padding: 32px 20px 64px;
     line-height: 1.45;
   }
 
   .eyebrow {
     font-family: var(--mono);
     font-size: 12px;
-    letter-spacing: 0.08em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--text-muted);
+    color: var(--accent-ink);
   }
   h1 {
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 800;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
     text-wrap: balance;
-    margin: 4px 0 2px;
+    margin: 6px 0 8px;
+  }
+  .route-rule {
+    height: 3px;
+    width: 100%;
+    margin-bottom: 10px;
+    background-image: repeating-linear-gradient(90deg, var(--accent) 0 10px, transparent 10px 16px);
+    border-radius: 3px;
+    opacity: 0.85;
   }
   .week-range {
     font-family: var(--mono);
     font-size: 13px;
     color: var(--text-muted);
-    margin-bottom: 22px;
+    margin-bottom: 26px;
+  }
+  .week-range b { color: var(--text); font-weight: 700; }
+
+  section { margin-bottom: 26px; }
+  .section-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 10px;
   }
 
+  /* last week recap */
+  .recap-card {
+    background: var(--surface-sunken);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .recap-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+  }
+  .recap-head .title { font-size: 14px; font-weight: 700; color: var(--text-muted); }
+  .recap-score {
+    font-family: var(--mono);
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--success);
+    font-variant-numeric: tabular-nums;
+  }
+  .recap-score span { font-size: 12px; color: var(--text-faint); font-weight: 500; margin-left: 3px; }
+
+  .recap-strip {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+  }
+  .recap-day {
+    text-align: center;
+    padding: 8px 4px 9px;
+    border-radius: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    opacity: 0.82;
+  }
+  .recap-day .d {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-faint);
+    margin-bottom: 5px;
+  }
+  .recap-day .pct {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+  .recap-day .pct.success { color: var(--success); }
+  .recap-day .pct.warn { color: var(--warn); }
+  .recap-day .pct.na { color: var(--text-faint); font-size: 10px; font-weight: 600; }
+  .recap-note {
+    font-size: 11.5px;
+    color: var(--text-faint);
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+  /* today hero */
   .today-card {
-    background: var(--accent-tint);
+    position: relative;
+    background: linear-gradient(155deg, var(--accent-tint) 0%, var(--surface) 72%);
     border: 1px solid var(--accent-tint-border);
-    border-radius: 10px;
-    padding: 20px 20px 18px;
-    margin-bottom: 28px;
+    border-radius: 14px;
+    padding: 22px 22px 20px;
+    overflow: hidden;
+  }
+  .today-card::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    right: -12%;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.1;
   }
   .today-card .label {
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 700;
+    color: var(--accent-ink);
+    font-weight: 800;
+    position: relative;
   }
   .today-card .workout-name {
-    font-size: 20px;
+    font-size: 23px;
     font-weight: 800;
-    margin: 6px 0 10px;
+    margin: 6px 0 14px;
     text-wrap: balance;
+    position: relative;
   }
   .today-stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    gap: 12px;
-    margin-bottom: 10px;
+    gap: 14px;
+    margin-bottom: 14px;
+    position: relative;
   }
   .stat .k {
     font-family: var(--mono);
@@ -121,58 +237,65 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--text-muted);
+    margin-bottom: 3px;
   }
   .stat .v {
     font-family: var(--mono);
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 800;
     font-variant-numeric: tabular-nums;
+    color: var(--accent-ink);
   }
   .today-note {
     font-size: 13px;
     color: var(--text-muted);
     border-top: 1px solid var(--accent-tint-border);
-    padding-top: 10px;
-    margin-top: 4px;
+    padding-top: 12px;
+    margin-top: 2px;
+    position: relative;
   }
 
+  /* week list */
   .week-list {
     display: flex;
     flex-direction: column;
-    border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
+    border: 1px solid var(--border);
   }
   .day-row {
     display: grid;
-    grid-template-columns: 76px 1fr auto;
+    grid-template-columns: 5px 68px 1fr auto;
     align-items: center;
     gap: 14px;
-    padding: 13px 16px;
+    padding: 14px 16px 14px 0;
     background: var(--surface);
     border-bottom: 1px solid var(--border);
   }
   .day-row:last-child { border-bottom: none; }
-  .day-row.is-past { opacity: 0.55; }
-  .day-row.is-today { background: var(--accent-tint); }
-  .day-row.is-rest { background: var(--surface-sunken); }
+  .stripe { align-self: stretch; border-radius: 3px; }
+  .stripe.type-easy { background: var(--pine); opacity: 0.55; }
+  .stripe.type-subt { background: var(--gold); }
+  .stripe.type-long { background: var(--pine); }
+  .stripe.type-rest { background: var(--border); }
 
   .day-date {
     font-family: var(--mono);
     font-size: 12px;
     color: var(--text-muted);
+    font-weight: 600;
   }
   .day-date .dow {
     display: block;
     font-size: 11px;
     color: var(--text-faint);
     margin-top: 1px;
+    font-weight: 400;
   }
-  .day-row.is-today .day-date, .day-row.is-today .day-date .dow { color: var(--accent); font-weight: 700; }
 
   .day-workout .name {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 14.5px;
+    font-weight: 700;
   }
   .day-workout .target {
     font-family: var(--mono);
@@ -184,115 +307,123 @@
   .chip {
     font-family: var(--mono);
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 0.03em;
-    padding: 4px 9px;
+    padding: 5px 10px;
     border-radius: 100px;
     white-space: nowrap;
   }
-  .chip.today { background: var(--accent); color: var(--surface); }
-  .chip.upcoming { background: var(--surface-sunken); color: var(--text-muted); border: 1px solid var(--border); }
-  .chip.rest { background: transparent; color: var(--text-faint); }
-  .chip.pre-plan { background: transparent; color: var(--text-faint); font-style: italic; font-weight: 400; }
+  .chip.subt { background: var(--gold-tint); color: var(--gold); }
+  .chip.long { background: var(--pine-tint); color: var(--pine); }
+  .chip.easy { background: var(--pine-tint); color: var(--pine); }
+  .chip.rest { background: transparent; color: var(--text-faint); font-weight: 600; }
 
   .legend {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px 16px;
+    gap: 8px 18px;
     margin-top: 18px;
     font-family: var(--mono);
     font-size: 11px;
     color: var(--text-faint);
   }
-  .legend span { white-space: nowrap; }
+  .legend .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; }
 
   footer {
-    margin-top: 24px;
+    margin-top: 8px;
     font-family: var(--mono);
     font-size: 11px;
     color: var(--text-faint);
   }
 </style>
 
-<p class="eyebrow">Running Plan · NSM Base</p>
+<p class="eyebrow">Running Plan · NSM 베이스 도입 1주차</p>
 <h1>이번 주 러닝 대시보드</h1>
-<p class="week-range">2026-07-06 (월) – 2026-07-12 (일) · 회복 전환주</p>
+<div class="route-rule"></div>
+<p class="week-range"><b>2026-07-13 (월) – 07-19 (일)</b> · VDOT 51</p>
 
-<div class="today-card">
-  <div class="label">오늘 · 7/8 (수)</div>
-  <div class="workout-name">이지런 40min</div>
-  <div class="today-stats">
-    <div class="stat"><div class="k">심박 상한</div><div class="v">≤145 bpm</div></div>
-    <div class="stat"><div class="k">목표 시간</div><div class="v">40:00</div></div>
-    <div class="stat"><div class="k">상태</div><div class="v">진행 전</div></div>
+<section>
+  <div class="section-title">지난주 요약 (07-06 – 07-12)</div>
+  <div class="recap-card">
+    <div class="recap-head">
+      <span class="title">회복 전환주 · 평균 수행률</span>
+      <span class="recap-score">93<span>%</span></span>
+    </div>
+    <div class="recap-strip">
+      <div class="recap-day"><div class="d">월 06</div><div class="pct na">계획전</div></div>
+      <div class="recap-day"><div class="d">화 07</div><div class="pct na">휴식</div></div>
+      <div class="recap-day"><div class="d">수 08</div><div class="pct success">100%</div></div>
+      <div class="recap-day"><div class="d">목 09</div><div class="pct warn">78%</div></div>
+      <div class="recap-day"><div class="d">금 10</div><div class="pct na">휴식</div></div>
+      <div class="recap-day"><div class="d">토 11</div><div class="pct success">97%</div></div>
+      <div class="recap-day"><div class="d">일 12</div><div class="pct success">102%</div></div>
+    </div>
+    <p class="recap-note">※ 07-13 기준 미리보기 예시 — 실제 자동 루틴은 매일 이 구간을 완료된 활동으로 갱신합니다.</p>
   </div>
-  <div class="today-note">간밤 수면 7.3h · 점수 78(FAIR), HRV 93ms로 균형 범위 근접 — 컨디션 정상, 계획대로 진행.</div>
-</div>
+</section>
 
-<div class="week-list">
-  <div class="day-row is-past">
-    <div class="day-date">07/06<span class="dow">월</span></div>
-    <div class="day-workout">
-      <div class="name">8x3min @15K pace</div>
-      <div class="target">7.68km · 41:20 · 평균 133bpm</div>
+<section>
+  <div class="section-title">오늘</div>
+  <div class="today-card">
+    <div class="label">7/13 (월) · NSM 베이스 1주차 시작</div>
+    <div class="workout-name">이지런 40min</div>
+    <div class="today-stats">
+      <div class="stat"><div class="k">심박 상한</div><div class="v">≤145</div></div>
+      <div class="stat"><div class="k">목표 시간</div><div class="v">40:00</div></div>
+      <div class="stat"><div class="k">페이스 존</div><div class="v">5:35–6:05</div></div>
     </div>
-    <span class="chip pre-plan">계획 이전</span>
+    <div class="today-note">새 NSM 주차 첫날 — 완전 이지 페이스로 시작, 목요일 sub-T(3min×8)를 위해 오늘은 다리를 가볍게 유지.</div>
   </div>
-  <div class="day-row is-past is-rest">
-    <div class="day-date">07/07<span class="dow">화</span></div>
-    <div class="day-workout">
-      <div class="name">활동 없음</div>
-      <div class="target">계획 없음(자동화 이전)</div>
+</section>
+
+<section>
+  <div class="section-title">이번 주 나머지</div>
+  <div class="week-list">
+    <div class="day-row">
+      <div class="stripe type-subt"></div>
+      <div class="day-date">07/14<span class="dow">화</span></div>
+      <div class="day-workout"><div class="name">NSM short v2 (3min×8)</div><div class="target">4:16–4:22/km · rest 60s 도보</div></div>
+      <span class="chip subt">SUB-T</span>
     </div>
-    <span class="chip rest">휴식</span>
-  </div>
-  <div class="day-row is-today">
-    <div class="day-date">07/08<span class="dow">수</span></div>
-    <div class="day-workout">
-      <div class="name">이지런 40min</div>
-      <div class="target">HR ≤145bpm</div>
+    <div class="day-row">
+      <div class="stripe type-rest"></div>
+      <div class="day-date">07/15<span class="dow">수</span></div>
+      <div class="day-workout"><div class="name">휴식</div><div class="target">계획된 세션 없음</div></div>
+      <span class="chip rest">휴식</span>
     </div>
-    <span class="chip today">오늘</span>
-  </div>
-  <div class="day-row">
-    <div class="day-date">07/09<span class="dow">목</span></div>
-    <div class="day-workout">
-      <div class="name">이지런 40min</div>
-      <div class="target">HR ≤145bpm</div>
+    <div class="day-row">
+      <div class="stripe type-long"></div>
+      <div class="day-date">07/16<span class="dow">목</span></div>
+      <div class="day-workout"><div class="name">NSM long v2 (12min×2)</div><div class="target">4:27–4:35/km · rest 60s 도보</div></div>
+      <span class="chip long">LONG</span>
     </div>
-    <span class="chip upcoming">예정</span>
-  </div>
-  <div class="day-row is-rest">
-    <div class="day-date">07/10<span class="dow">금</span></div>
-    <div class="day-workout">
-      <div class="name">휴식</div>
-      <div class="target">계획된 세션 없음</div>
+    <div class="day-row">
+      <div class="stripe type-rest"></div>
+      <div class="day-date">07/17<span class="dow">금</span></div>
+      <div class="day-workout"><div class="name">휴식</div><div class="target">계획된 세션 없음</div></div>
+      <span class="chip rest">휴식</span>
     </div>
-    <span class="chip rest">휴식</span>
-  </div>
-  <div class="day-row">
-    <div class="day-date">07/11<span class="dow">토</span></div>
-    <div class="day-workout">
-      <div class="name">롱런 복원 12km</div>
-      <div class="target">HR ≤150bpm</div>
+    <div class="day-row">
+      <div class="stripe type-easy"></div>
+      <div class="day-date">07/18<span class="dow">토</span></div>
+      <div class="day-workout"><div class="name">이지런 40min</div><div class="target">HR ≤145bpm</div></div>
+      <span class="chip easy">EASY</span>
     </div>
-    <span class="chip upcoming">예정</span>
-  </div>
-  <div class="day-row">
-    <div class="day-date">07/12<span class="dow">일</span></div>
-    <div class="day-workout">
-      <div class="name">회복런 5km</div>
-      <div class="target">HR ≤135bpm</div>
+    <div class="day-row">
+      <div class="stripe type-long"></div>
+      <div class="day-date">07/19<span class="dow">일</span></div>
+      <div class="day-workout"><div class="name">롱런 복원 12km</div><div class="target">HR ≤150bpm</div></div>
+      <span class="chip long">LONG</span>
     </div>
-    <span class="chip upcoming">예정</span>
   </div>
-</div>
+</section>
 
 <div class="legend">
-  <span>■ 오늘</span>
-  <span>■ 예정</span>
-  <span>■ 휴식</span>
-  <span>■ 지난 날(회색) — 수행률은 계획이 있던 날부터 계산</span>
+  <span><i class="dot" style="background:var(--pine)"></i>이지·롱런</span>
+  <span><i class="dot" style="background:var(--gold)"></i>sub-threshold</span>
+  <span><i class="dot" style="background:var(--success)"></i>90%+ 수행</span>
+  <span><i class="dot" style="background:var(--warn)"></i>70–89% 수행</span>
+  <span><i class="dot" style="background:var(--miss)"></i>70% 미만</span>
 </div>
 
-<footer>running-plan/plan.md 기준 자동 생성 · VDOT 51 · NSM 베이스 도입 1주차</footer>
+<footer>running-plan/plan.md 기준 자동 생성 · 10K B레이스 10/18 · 10K A 11/1 · HM 11/15</footer>
