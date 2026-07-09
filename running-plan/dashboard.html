@@ -443,6 +443,50 @@
     margin-top: 10px;
   }
 
+  .weekly-weather {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+  .ww-tile {
+    flex: 1 1 0;
+    min-width: 72px;
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 9px 4px 8px;
+  }
+  .ww-tile.is-today { box-shadow: inset 0 0 0 2px var(--today-box); background: var(--today-box-tint); }
+  .ww-tile.no-data { opacity: 0.42; }
+  .ww-tile .d {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  .ww-tile .range {
+    font-family: var(--mono);
+    font-size: 13.5px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+  .ww-tile .range .lo { color: var(--text-faint); font-weight: 500; }
+  .ww-tile .rain2 {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    color: var(--tide);
+    margin-top: 4px;
+  }
+  .ww-tile .desc {
+    font-size: 9px;
+    color: var(--text-faint);
+    margin-top: 2px;
+    line-height: 1.25;
+  }
+
   /* acwr chart */
   .acwr-card {
     background: var(--surface-sunken);
@@ -587,6 +631,51 @@
       <span class="chip easy">EASY</span>
     </div>
   </div>
+</section>
+
+<section>
+  <div class="section-title">주간 날씨 (서울)</div>
+  <div class="weekly-weather">
+    <div class="ww-tile no-data">
+      <div class="d">월 06</div>
+      <div class="range">—</div>
+      <div class="desc">지난 날</div>
+    </div>
+    <div class="ww-tile no-data">
+      <div class="d">화 07</div>
+      <div class="range">—</div>
+      <div class="desc">지난 날</div>
+    </div>
+    <div class="ww-tile no-data">
+      <div class="d">수 08</div>
+      <div class="range">—</div>
+      <div class="desc">지난 날</div>
+    </div>
+    <div class="ww-tile is-today">
+      <div class="d">목 09<br>오늘</div>
+      <div class="range">26°<span class="lo">/24°</span></div>
+      <div class="rain2">☔ 71%</div>
+      <div class="desc">비 산발</div>
+    </div>
+    <div class="ww-tile">
+      <div class="d">금 10</div>
+      <div class="range">28°<span class="lo">/22°</span></div>
+      <div class="rain2">☔ 72%</div>
+      <div class="desc">가벼운 소나기</div>
+    </div>
+    <div class="ww-tile">
+      <div class="d">토 11</div>
+      <div class="range">33°<span class="lo">/24°</span></div>
+      <div class="rain2">☔ 22%</div>
+      <div class="desc">대체로 맑음</div>
+    </div>
+    <div class="ww-tile no-data">
+      <div class="d">일 12</div>
+      <div class="range">—</div>
+      <div class="desc">예보 범위 밖</div>
+    </div>
+  </div>
+  <p class="weather-note">토요일(롱런 12km 예정)은 비 확률 22%로 가장 낮지만 최고 33°까지 오르는 무더위 — 이른 아침 출발, 수분·전해질 보충 권장. 목·금은 비 확률 70%대로 높으니 우천 대비.</p>
 </section>
 
 <section>
