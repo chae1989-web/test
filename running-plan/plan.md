@@ -130,7 +130,7 @@
 
 ## 자동 Routine
 
-**주간+일간 2개였던 걸 데일리 1개로 통합함(2026-07-08)** — 매일 아침 실행(trig_01VEM1PuWJ8YGzgcazFifzvf, "러닝 데일리 대시보드"):
+**주간+일간 2개였던 걸 데일리 1개로 통합함(2026-07-08)** — 매일 아침 실행(trig_018PZ82CkWqVmCkVNfs43nVg, "러닝 데일리 대시보드"):
 1. 이번 주(월~일)에 아직 미등록 구간이 있으면 이 표의 규칙(ACWR 0.8~1.3, 롱런 +10%룰, 디로드 주, short+mid+long 또는 회복 저조시 short+long)으로 채워서 가민에 등록
 2. 오늘 컨디션(readiness/HRV/수면) 확인 → 저조 시 오늘 세션을 이지런/회복런으로 교체
 3. 이번 주 전체 스케줄 + 지난 날짜의 실제 수행(get_activities_fordate, sub-threshold는 get_activity_split_summaries)을 "수행률(%) 평가 방법" 섹션 규칙대로 대조해 채점
