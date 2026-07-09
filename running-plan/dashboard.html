@@ -267,6 +267,39 @@
     position: relative;
   }
 
+  /* week summary */
+  .week-summary {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .week-summary .box {
+    flex: 1 1 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+  }
+  .week-summary .k {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
+    color: var(--text-faint);
+    margin-bottom: 4px;
+  }
+  .week-summary .v {
+    font-family: var(--mono);
+    font-size: 18px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+  .week-summary .v .sep { color: var(--text-faint); font-weight: 400; margin: 0 6px; }
+  .week-summary .note {
+    font-size: 10.5px;
+    color: var(--text-faint);
+    margin-top: 8px;
+  }
+
   /* week list */
   .week-list {
     display: flex;
@@ -499,6 +532,17 @@
 
 <section>
   <div class="section-title">이번주 일정</div>
+  <div class="week-summary">
+    <div class="box">
+      <div class="k">실제 누적 (월~오늘)</div>
+      <div class="v">7.68<span class="sep">km</span>0:41<span class="sep">hh:mm</span></div>
+    </div>
+    <div class="box">
+      <div class="k">이번 주 계획 합계</div>
+      <div class="v">32.7<span class="sep">km</span>3:07<span class="sep">hh:mm</span></div>
+      <div class="note">* 시간 기반 세션(이지런/NSM)은 페이스 존 중간값으로 거리 추정</div>
+    </div>
+  </div>
   <div class="week-list">
     <div class="day-row is-past">
       <div class="stripe type-rest"></div>
