@@ -466,14 +466,14 @@
 <section>
   <div class="section-title">오늘</div>
   <div class="today-card">
-    <div class="label">7/10 (금) · 회복 전환주 · 휴식일(계획대로)</div>
-    <div class="workout-name">휴식</div>
+    <div class="label">7/10 (금) · 회복 전환주 · 사용자 수동 조정</div>
+    <div class="workout-name">회복런 5km</div>
     <div class="today-stats">
-      <div class="stat"><div class="k">상태</div><div class="v">휴식일</div></div>
-      <div class="stat"><div class="k">주 누적</div><div class="v">15.1km</div></div>
-      <div class="stat"><div class="k">다음 하드세션</div><div class="v">7/11 롱런</div></div>
+      <div class="stat"><div class="k">목표 HR</div><div class="v">≤135bpm</div></div>
+      <div class="stat"><div class="k">거리</div><div class="v">5km</div></div>
+      <div class="stat"><div class="k">주 누적(세션 전)</div><div class="v">15.1km</div></div>
     </div>
-    <div class="today-note">어제(7/9) NSM-M 실행 결과 ACTIVE 랩 최고심박이 155~177bpm으로 Soft Ceiling(167bpm)을 다수 초과 — 종합 등급 <b>FAIL(과다강도)</b>. "동적 주간 조정 규칙"에 따라 재배치를 검토했으나 유일한 REST 슬롯인 오늘은 하드 세션 최소 간격(1일) 조건을 만족하지 못해 재배치하지 않고 계획대로 휴식 유지. 오늘 컨디션은 양호(HRV 102ms BALANCED·주간평균98, 수면 7.52h/score81 GOOD).</div>
+    <div class="today-note">원래 계획대로라면 휴식일이었으나(어제 NSM-M이 FAIL 등급을 받아 오늘 재배치는 간격 조건상 보류했던 날), 사용자가 다리 컨디션이 좋다고 판단해 회복런 5km(HR≤135)로 직접 조정 — "사용자 수동 조정"으로 기록. 최종 스케줄 기준으로 채점되며, 동적 주간 조정 판단에서 컨디션 저하 신호로 취급하지 않음.</div>
   </div>
 </section>
 
@@ -523,8 +523,8 @@
     </div>
     <div class="box">
       <div class="k">이번 주 계획 합계</div>
-      <div class="v">32.7km<span class="sep">·</span>3h7m</div>
-      <div class="note">* 시간 기반 세션(이지런/NSM)은 페이스 존 중간값으로 거리 추정</div>
+      <div class="v">37.7km<span class="sep">·</span>3h37m</div>
+      <div class="note">* 시간 기반 세션(이지런/NSM)은 페이스 존 중간값으로 거리 추정. 7/10 회복런 5km는 사용자 수동 조정으로 추가</div>
     </div>
   </div>
   <div class="week-list">
@@ -553,10 +553,10 @@
       <span class="chip score miss">FAIL</span>
     </div>
     <div class="day-row is-today">
-      <div class="stripe type-rest"></div>
+      <div class="stripe type-easy"></div>
       <div class="day-date">07/10<span class="dow">금</span><span class="today-tag">오늘</span></div>
-      <div class="day-workout"><div class="name">휴식</div><div class="target">계획된 세션 없음</div></div>
-      <span class="chip rest">휴식</span>
+      <div class="day-workout"><div class="name">회복런 5km · 수동 조정</div><div class="target">목표 HR ≤135bpm</div></div>
+      <span class="chip easy">EASY</span>
     </div>
     <div class="day-row">
       <div class="stripe type-long"></div>
@@ -602,7 +602,7 @@
   <div class="section-title">훈련 부하 (ACWR)</div>
   <div class="acwr-card">
     <p class="acwr-caption">급성:만성 부하비 = 이번 주 볼륨 ÷ 최근 4주 평균 볼륨. 초록 밴드(0.8–1.3)가 안전 구간, 점선이 고위험 기준(1.5)</p>
-    <svg class="acwr-chart" viewBox="0 0 600 200" role="img" aria-label="주간 ACWR 추이, 6/8주 1.37, 6/15주 1.47, 6/22주 1.47, 6/29주 1.07, 7/6주 계획 0.86">
+    <svg class="acwr-chart" viewBox="0 0 600 200" role="img" aria-label="주간 ACWR 추이, 6/8주 1.37, 6/15주 1.47, 6/22주 1.47, 6/29주 1.07, 7/6주 계획 0.99">
       <rect x="40" y="46.25" width="540" height="43.75" fill="var(--success-tint)" />
       <line x1="40" y1="160" x2="580" y2="160" stroke="var(--border)" stroke-width="1" />
       <line x1="40" y1="27.5" x2="580" y2="27.5" stroke="var(--miss)" stroke-width="1" stroke-dasharray="4 4" opacity="0.6" />
@@ -624,11 +624,11 @@
       <text x="418" y="58" text-anchor="middle" class="acwr-bar-label" fill="var(--success)">1.07</text>
       <text x="418" y="178" text-anchor="middle" class="acwr-axis-label" fill="var(--text-faint)">6/29</text>
 
-      <rect x="496" y="84.75" width="60" height="75.25" rx="3" fill="none" stroke="var(--tide)" stroke-width="2" stroke-dasharray="4 3" />
-      <text x="526" y="76" text-anchor="middle" class="acwr-bar-label" fill="var(--tide)">0.86*</text>
+      <rect x="496" y="72.95" width="60" height="87.05" rx="3" fill="none" stroke="var(--tide)" stroke-width="2" stroke-dasharray="4 3" />
+      <text x="526" y="64" text-anchor="middle" class="acwr-bar-label" fill="var(--tide)">0.99*</text>
       <text x="526" y="178" text-anchor="middle" class="acwr-axis-label" fill="var(--text-faint)">7/6</text>
     </svg>
-    <p class="weather-note" style="margin-top:2px;">6/8~6/22주는 15K/30K pace·LT 인터벌이 이어지며 1.3대 후반까지 상승(주의 구간) — 이후 볼륨을 낮춘 회복 전환주(7/6~)가 정확히 필요했던 조정이었음을 보여줌. *7/6주는 실제 스케줄된 7일 합계(32.7km, 7/9 NSM-M 수동 조정 반영) 기준 진행중 수치 — 안전 구간(0.8~1.3) 안쪽.</p>
+    <p class="weather-note" style="margin-top:2px;">6/8~6/22주는 15K/30K pace·LT 인터벌이 이어지며 1.3대 후반까지 상승(주의 구간) — 이후 볼륨을 낮춘 회복 전환주(7/6~)가 정확히 필요했던 조정이었음을 보여줌. *7/6주는 실제 스케줄된 7일 합계(37.7km, 7/9 NSM-M·7/10 회복런 수동 조정 반영) 기준 진행중 수치 — 안전 구간(0.8~1.3) 안쪽.</p>
   </div>
 </section>
 
