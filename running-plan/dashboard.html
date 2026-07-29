@@ -466,14 +466,14 @@
 <section>
   <div class="section-title">오늘</div>
   <div class="today-card">
-    <div class="label">7/30 (목) · 요일 고정제(월S/수M/금L/일롱런)</div>
-    <div class="workout-name">이지런 40min</div>
+    <div class="label">7/30 (목) · 휴식 다음날 하드 즉시 배치(신규 규칙)</div>
+    <div class="workout-name">NSM-M (6min×4) · 완료</div>
     <div class="today-stats">
-      <div class="stat"><div class="k">목표 HR</div><div class="v">≤145bpm</div></div>
-      <div class="stat"><div class="k">컨디션</div><div class="v">HRV/수면 미동기화</div></div>
+      <div class="stat"><div class="k">오늘 결과</div><div class="v">10.69km·58:01, FAIL</div></div>
+      <div class="stat"><div class="k">평균 HR</div><div class="v">151bpm(랩최고 183)</div></div>
       <div class="stat"><div class="k">어제(7/29)</div><div class="v">NSM-M FAIL(미실시)</div></div>
     </div>
-    <div class="today-note">어제 예정됐던 NSM-M을 수행하지 않음(활동 기록 없음) → FAIL(미실시). 이번 주 남은 요일에 REST 슬롯이 없어 재배치하지 않음(동적 조정 규칙 — 볼륨을 억지로 채우지 않음), 연속 미실시가 아니므로 강등도 없이 예정된 이지런 그대로 진행. 오늘은 맑고 강수확률 매우 낮은 편(2~23%)이나 낮 기온 32°까지 오르니 수분 보충 권장.</div>
+    <div class="today-note">사용자가 어제 미실시분을 오늘 자체 보충(원 스케줄은 이지런) — 사용자 요청으로 "휴식/미실시 다음날은 이지런 버퍼 없이 하드 세션 즉시 배치" 규칙 신설. 다만 오늘 세션은 ACTIVE 랩4개 중 3개(랩7·9·11, 175/180/183bpm)가 Soft Ceiling(167bpm)을 크게 초과하며 반복마다 HR이 계속 상승 → 세션 종합 등급 FAIL(과다강도). 하드→하드는 여전히 금지 규칙이라 내일(7/31) 예정이던 NSM-L을 이지런으로 교체, 최소 하루 간격 확보.</div>
   </div>
 </section>
 
@@ -513,12 +513,12 @@
   <div class="week-summary">
     <div class="box">
       <div class="k">실제 누적 (월~오늘)</div>
-      <div class="v">14.24km<span class="sep">·</span>1h24m</div>
+      <div class="v">24.93km<span class="sep">·</span>2h22m</div>
     </div>
     <div class="box">
       <div class="k">이번 주 계획 합계(추정)</div>
       <div class="v">약 54.5km<span class="sep">·</span>약 5h05m</div>
-      <div class="note">* 디로드 취소, 요일 고정제로 복귀(월S/수M/금L/일롱런12km, 화목토 이지런). 시간 기반 세션은 페이스 존 중간값으로 거리 추정</div>
+      <div class="note">* 요일 고정제(월S/수M/금L/일롱런12km, 화목토 이지런) 기준 추정치였으나, 7/29 NSM-M 미실시→7/30 보충(FAIL) 여파로 이번 주는 7/31 NSM-L을 이지런으로 교체(하드 세션 간격 확보). 시간 기반 세션은 페이스 존 중간값으로 거리 추정</div>
     </div>
   </div>
   <div class="week-list">
@@ -541,16 +541,16 @@
       <span class="chip subt">FAIL</span>
     </div>
     <div class="day-row is-today">
-      <div class="stripe type-easy"></div>
+      <div class="stripe type-subt"></div>
       <div class="day-date">07/30<span class="dow">목</span><span class="today-tag">오늘</span></div>
-      <div class="day-workout"><div class="name">이지런 40min</div><div class="target">목표 HR ≤145bpm · 5:35–6:05/km</div></div>
-      <span class="chip easy">EASY</span>
+      <div class="day-workout"><div class="name">NSM-M (6min×4) · 사용자 보충</div><div class="target">10.69km·58:01, 랩최고HR 167/175/180/183, FAIL</div></div>
+      <span class="chip subt">FAIL</span>
     </div>
     <div class="day-row">
-      <div class="stripe type-subt"></div>
+      <div class="stripe type-easy"></div>
       <div class="day-date">07/31<span class="dow">금</span></div>
-      <div class="day-workout"><div class="name">NSM-L (10min×2)</div><div class="target">HR 149–157 · 4:38–4:44/km(참고)</div></div>
-      <span class="chip subt">NSM-L</span>
+      <div class="day-workout"><div class="name">이지런 40min · 조정(NSM-L 대체)</div><div class="target">목표 HR ≤145bpm · 5:35–6:05/km</div></div>
+      <span class="chip easy">EASY</span>
     </div>
     <div class="day-row">
       <div class="stripe type-easy"></div>
@@ -622,7 +622,7 @@
       <text x="526" y="32" text-anchor="middle" class="acwr-bar-label" fill="var(--warn)">1.37*</text>
       <text x="526" y="178" text-anchor="middle" class="acwr-axis-label" fill="var(--text-faint)">7/27</text>
     </svg>
-    <p class="weather-note" style="margin-top:2px;">7/6주 최종 실적 0.82, 7/13주(NSM 베이스 도입 1주차) 최종 실적 1.16, **7/20주 최종 실적 1.17**(45.76km 실측, 예상 1.35보다 낮게 마무리 — 7/26 롱런이 목표 12km 중 5.05km만 완주된 영향) — 셋 다 안전 구간 안쪽. **7/27주는 사용자 요청으로 디로드를 취소하고 요일 고정제(월S/수M/금L/일롱런12km)로 복귀** — 추정 ACWR **1.37로 주의 구간 재진입**(*계획 총량 약 54.5km 기준 추정, 실제 수행에 따라 달라질 수 있음). 디로드 없이 정상 볼륨으로 바로 복귀한 첫 주에 **7/29 NSM-M이 FAIL(미실시)**로 나와 계획 대비 실제 볼륨은 더 낮아질 전망 — 컨디션·등급을 특히 주의 깊게 볼 필요 있음.</p>
+    <p class="weather-note" style="margin-top:2px;">7/6주 최종 실적 0.82, 7/13주(NSM 베이스 도입 1주차) 최종 실적 1.16, **7/20주 최종 실적 1.17**(45.76km 실측, 예상 1.35보다 낮게 마무리 — 7/26 롱런이 목표 12km 중 5.05km만 완주된 영향) — 셋 다 안전 구간 안쪽. **7/27주는 사용자 요청으로 디로드를 취소하고 요일 고정제(월S/수M/금L/일롱런12km)로 복귀** — 추정 ACWR **1.37로 주의 구간 재진입**(*계획 총량 약 54.5km 기준 추정, 실제 수행에 따라 달라질 수 있음). 디로드 없이 정상 볼륨으로 바로 복귀한 첫 주에 **7/29 NSM-M 미실시(FAIL) → 7/30 사용자 보충도 과다강도로 FAIL**(Soft Ceiling 175~183bpm 초과)이 겹침 — 하드 세션 간격 확보를 위해 7/31 NSM-L을 이지런으로 교체하며 계획 대비 실제 볼륨은 더 낮아질 전망. 사용자 요청으로 "휴식/미실시 다음날 하드 즉시 배치" 규칙이 신설됐으나 "하드→하드" 금지는 유지되므로 향후에도 이런 조정이 반복될 수 있음 — 컨디션·등급을 특히 주의 깊게 볼 필요 있음.</p>
   </div>
 </section>
 
