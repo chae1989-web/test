@@ -467,14 +467,14 @@
 <section>
   <div class="section-title">오늘</div>
   <div class="today-card">
-    <div class="label">9/22 (화) · NSM-L v6</div>
-    <div class="workout-name">NSM long(10min x 3) v6</div>
+    <div class="label">9/23 (수) · 이지런</div>
+    <div class="workout-name">이지런 40min</div>
     <div class="today-stats">
-      <div class="stat"><div class="k">목표 HR</div><div class="v">149~157bpm(마지막랩 평균 ≤162bpm 자체상한)</div></div>
-      <div class="stat"><div class="k">컨디션</div><div class="v">HRV 68ms(UNBALANCED) · 수면 7.82h(86점) GOOD</div></div>
-      <div class="stat"><div class="k">어제(9/21)</div><div class="v">FAIL(미실시)</div></div>
+      <div class="stat"><div class="k">목표 HR</div><div class="v">≤145bpm</div></div>
+      <div class="stat"><div class="k">컨디션</div><div class="v">HRV/수면 아직 미동기화</div></div>
+      <div class="stat"><div class="k">어제(9/22)</div><div class="v">FAIL(마지막 랩 평균171, 자체상한 162 대비 +9bpm)</div></div>
     </div>
-    <div class="today-note"><b>어제(9/21) 채점</b>: `get_activities_fordate` 결과 활동 기록 없음 — 예정된 회복런 5km <b>미실시(FAIL)</b>. "동적 주간 조정 규칙" 2항(이지런/회복런 미실시는 재배치하지 않고 순수 볼륨 손실)에 따라 재배치 없이 그대로 기록, 연속 미실시가 아니고(9/20은 자율 장거리 수행 확인됨) 컨디션도 양호해 강등 규칙(3항)도 미적용. <b>오늘(9/22) 컨디션 HRV 68ms(UNBALANCED, LOW 아님)·수면 7.82h(86점 GOOD)로 양호</b> — 조정 없이 예정된 NSM-L v6 그대로 진행. <b>9/19 NSM-M v5가 마지막 랩만 자체상한을 2bpm 초과했던 첫 실전 결과에 이어, 오늘이 자기조정형 워크아웃(v5/v6 계열)의 두 번째 실전 테스트</b> — 개선 추세가 이어지는지 중요 체크포인트. 마지막 랩(3세트째) 평균HR 162bpm을 넘지 않도록, 1세트부터 타깃존(149~157bpm) 안에서 시작할 것을 권장.</div>
+    <div class="today-note"><b>어제(9/22) 채점 — 자기조정 워크아웃 2차 테스트, 규모 있는 악화</b>: activity_id 24448977296 "NSM long(10min×3) v6" 9.03km·44.25min·평균152bpm. `get_activity_splits`로 ACTIVE 구간(10분 단위 3세트) 재구성 — 1세트 평균HR≈159.5(최고171, 타깃존 149~157bpm에 근접), 2세트 평균HR167(최고176, 이미 자체상한 초과), <b>3세트(마지막) 평균HR≈171.1(최고179) — 자체상한 162bpm을 9bpm이나 초과, 9/19 NSM-M v5의 2bpm 초과보다 훨씬 악화</b>된 결과 → 워크아웃별 우선규칙 적용해 <b>세션 FAIL</b>. 원인 분석: 실제 러닝 페이스가 세트당 약 4:17~4:19/km로 <b>워크아웃 지정 페이스(4:31~4:35/km)보다 12~16초/km나 빠르게 시작</b> — "1세트부터 타깃존 하단에서 출발" 권장이 지켜지지 않아 세트를 거듭할수록 HR이 159→167→171bpm으로 누적 상승. <b>중요 발견(사용자 수동 조정)</b>: `get_scheduled_workouts` 확인 중 사용자가 같은 날 00:32(달리기 전!)에 신규 워크아웃 2건을 추가 생성한 사실 확인 — "NSM short v6 HR"(1706248659, 9/25에 반영)과 "NSM mid v7 HR"(1706248661, 9/29 신규)로, <b>페이스 대신 가민 네이티브 심박존(heart.rate.zone) 타깃을 인터벌 스텝에 직접 내장</b>하고, v7은 <b>"4세트 종료 시 HR 165 초과 시 5세트째 생략"이라는 스킵형 자기조정 규칙</b>까지 추가한 한층 정교한 설계 — 워크아웃 라이브러리에 문서화 완료. 오늘(9/23) 컨디션 미동기화 — 조정 없이 이지런 진행.</div>
   </div>
 </section>
 
@@ -483,30 +483,30 @@
   <div class="weather-strip">
     <div class="weather-tile">
       <div class="t">12:00</div>
-      <div class="temp">27°</div>
-      <div class="hum">습도 30%</div>
+      <div class="temp">28°</div>
+      <div class="hum">습도 43%</div>
       <div class="rain">☔ 1%</div>
     </div>
     <div class="weather-tile">
       <div class="t">15:00</div>
       <div class="temp">29°</div>
-      <div class="hum">습도 25%</div>
-      <div class="rain">☔ 9%</div>
+      <div class="hum">습도 37%</div>
+      <div class="rain">☔ 1%</div>
     </div>
     <div class="weather-tile">
       <div class="t">18:00</div>
-      <div class="temp">27°</div>
-      <div class="hum">습도 32%</div>
-      <div class="rain">☔ 1%</div>
+      <div class="temp">25°</div>
+      <div class="hum">습도 51%</div>
+      <div class="rain">☔ 2%</div>
     </div>
     <div class="weather-tile">
       <div class="t">21:00</div>
-      <div class="temp">24°</div>
-      <div class="hum">습도 46%</div>
-      <div class="rain">☔ 1%</div>
+      <div class="temp">23°</div>
+      <div class="hum">습도 65%</div>
+      <div class="rain">☔ 4%</div>
     </div>
   </div>
-  <p class="weather-note">강수확률 1~9%로 대체로 쾌청 — NSM-L v6 인터벌 진행에 좋은 날씨.</p>
+  <p class="weather-note">강수확률 1~4%로 쾌청 — 이지런 진행에 좋은 날씨.</p>
 </section>
 
 <section>
@@ -514,7 +514,7 @@
   <div class="week-summary">
     <div class="box">
       <div class="k">실제 누적 (월~오늘)</div>
-      <div class="v">0km<span class="sep">·</span>0m</div>
+      <div class="v">9.0km<span class="sep">·</span>44m</div>
     </div>
     <div class="box">
       <div class="k">이번 주 계획 합계(7일 전체 등록)</div>
@@ -529,15 +529,15 @@
       <div class="day-workout"><div class="name">회복런 5km</div><div class="target">미실시</div></div>
       <span class="chip score miss">FAIL</span>
     </div>
-    <div class="day-row is-today">
+    <div class="day-row is-past">
       <div class="stripe type-subt"></div>
-      <div class="day-date">09/22<span class="dow">화</span><span class="today-tag">오늘</span></div>
-      <div class="day-workout"><div class="name">NSM-L v6 (10min×3)</div><div class="target">페이스 4:31–4:35/km · 마지막랩 평균HR≤162bpm(자체상한)</div></div>
-      <span class="chip subt">NSM-L</span>
+      <div class="day-date">09/22<span class="dow">화</span></div>
+      <div class="day-workout"><div class="name">NSM-L v6 (10min×3)</div><div class="target">9.03km·44.3min·세트평균 159→167→171(자체상한 162 대비 마지막 +9)</div></div>
+      <span class="chip score miss">FAIL</span>
     </div>
-    <div class="day-row">
+    <div class="day-row is-today">
       <div class="stripe type-easy"></div>
-      <div class="day-date">09/23<span class="dow">수</span></div>
+      <div class="day-date">09/23<span class="dow">수</span><span class="today-tag">오늘</span></div>
       <div class="day-workout"><div class="name">이지런 40min</div><div class="target">목표 HR ≤145bpm</div></div>
       <span class="chip easy">EASY</span>
     </div>
@@ -550,7 +550,7 @@
     <div class="day-row">
       <div class="stripe type-subt"></div>
       <div class="day-date">09/25<span class="dow">금</span></div>
-      <div class="day-workout"><div class="name">NSM-S v4 (3min×8)</div><div class="target">마지막랩 평균HR 상한 기준(자체조정)</div></div>
+      <div class="day-workout"><div class="name">NSM-S v6 HR (3min×8, 사용자 교체 편성)</div><div class="target">가민 네이티브 HR존 타깃 145~166bpm · 마지막 2세트 평균≤168/최고≤172</div></div>
       <span class="chip subt">NSM-S</span>
     </div>
     <div class="day-row">
@@ -566,7 +566,7 @@
       <span class="chip long">LONG</span>
     </div>
   </div>
-  <p style="font-size:11.5px;color:var(--text-faint);margin-top:8px;">※ 9/21 회복런 미실시(FAIL, 재배치 대상 아님 — 순수 볼륨 손실). 새 주(9/21~9/27) 전체 사전 등록 완료 — 추가 조치 불필요. 지난주(9/14~9/20) 최종: 9/14·9/18 미실시 FAIL, 9/16 NSM-S FAIL, 9/15·9/17 실시, 9/19 NSM-M v5(마지막 랩만 2bpm 초과) FAIL, 9/20 장거리 17.13km 양호(사전엔 "휴식일"로 오인했으나 실제로는 미등록 상태에서 사용자가 자율 수행한 것으로 확인) — 실제 누적 45.86km, ACWR 최종 1.01(안전 구간).</p>
+  <p style="font-size:11.5px;color:var(--text-faint);margin-top:8px;">※ 9/21 회복런 미실시(FAIL), 9/22 NSM-L v6 FAIL(마지막 세트 평균HR 171, 자체상한 162 대비 +9bpm — 시작 페이스가 목표보다 12~16초/km 빨라 HR 누적 상승). 같은 날 사용자가 신규 HR존 기반 워크아웃(v6 HR·v7 HR) 2건을 생성, 9/25 세션이 NSM-S v4→v6 HR로 교체 편성됨. 9/26·9/27은 변동 없음.</p>
 </section>
 
 <section>
@@ -576,26 +576,30 @@
       <div class="d">월 9/21</div>
       <div class="desc">지난 날</div>
     </div>
-    <div class="ww-tile is-today">
-      <div class="d">화 9/22<br>오늘</div>
-      <div class="range">29°<span class="lo">/19°</span></div>
-      <div class="rain2">☔ 1%</div>
-      <div class="desc">대체로 쾌청 — NSM-L v6 최적일</div>
+    <div class="ww-tile no-data">
+      <div class="d">화 9/22</div>
+      <div class="desc">지난 날</div>
     </div>
-    <div class="ww-tile">
-      <div class="d">수 9/23</div>
+    <div class="ww-tile is-today">
+      <div class="d">수 9/23<br>오늘</div>
       <div class="range">29°<span class="lo">/20°</span></div>
       <div class="rain2">☔ 4%</div>
-      <div class="desc">쾌청</div>
+      <div class="desc">쾌청 — 이지런 최적일</div>
     </div>
     <div class="ww-tile">
       <div class="d">목 9/24</div>
       <div class="range">28°<span class="lo">/20°</span></div>
-      <div class="rain2">☔ 12%</div>
+      <div class="rain2">☔ 3%</div>
       <div class="desc">새벽 연무, 오후 흐림</div>
     </div>
+    <div class="ww-tile">
+      <div class="d">금 9/25</div>
+      <div class="range">27°<span class="lo">/18°</span></div>
+      <div class="rain2">☔ 71%</div>
+      <div class="desc">저녁 비 가능성 높음</div>
+    </div>
   </div>
-  <p class="weather-note"><b>오늘(화, NSM-L v6)은 1~9%로 대체로 쾌청</b> — 인터벌 진행에 좋은 날씨. <b>내일(수)도 쾌청, 모레(목)는 새벽 연무 후 오후 흐림</b>.</p>
+  <p class="weather-note"><b>오늘(수, 이지런)은 1~4%로 쾌청</b> — 진행에 좋은 날씨. <b>내일(목)은 새벽 연무·오후 흐림, 모레(금, NSM-S v6 HR)는 저녁 강수확률 71%로 시간대 조정 고려 필요</b>.</p>
 </section>
 
 <section>
@@ -628,7 +632,7 @@
       <text x="526" y="46" text-anchor="middle" class="acwr-bar-label" fill="var(--success)">1.22</text>
       <text x="526" y="178" text-anchor="middle" class="acwr-axis-label" fill="var(--text-faint)">9/21</text>
     </svg>
-    <p class="weather-note" style="margin-top:2px;">8/24주 최종 0.85 — 안전 구간. <b>8/31주 최종 1.42(주의 구간)</b> — 계획 외 추가 세션이 주요 원인, 1.5 고위험 기준에는 못 미침. <b>9/7주 최종 0.89(안전 구간)</b> — 9/7·9/11·9/12 3일 미실시에도 9/13 TT일 대량 계획 외 볼륨(22.6km)으로 상쇄돼 예상보다 낮게 마감. <b>9/14주 최종 1.01(안전 구간)</b> — 9/14·9/18 미실시에도 9/20 사용자의 자율 장거리(17.13km, 당시엔 "휴식일"로 오인)가 상쇄해 실제 합산 45.86km로 마감, 계획 기준 추정치(0.90)보다 오히려 높게 확정. <b>9/21주는 새 주 7일 전체 등록 완료, 계획 기준 추정 1.22(안전 구간 상단 근접)</b> — 10K B레이스(10/18)를 4주 앞두고 빌드업 주간 진입, 9/27 하프특이 롱런(마지막 15분 4:25) 신규 포함. <b>8/25 트레드밀 v1 이후 처음으로 자기조정형 NSM-M v5가 9/19에 실전 사용돼 4랩 중 3랩이 타깃존에 착지(마지막 랩만 2bpm 초과)</b> — 오늘(9/22) NSM-L v6가 이 자기조정형 워크아웃 계열의 두 번째 실전 테스트, 개선 추세가 이어지는지 확인 예정. 9/21 회복런은 미실시(FAIL)로 기록됐으나 재배치 대상 아님.</p>
+    <p class="weather-note" style="margin-top:2px;">8/24주 최종 0.85 — 안전 구간. <b>8/31주 최종 1.42(주의 구간)</b> — 계획 외 추가 세션이 주요 원인, 1.5 고위험 기준에는 못 미침. <b>9/7주 최종 0.89(안전 구간)</b> — 9/7·9/11·9/12 3일 미실시에도 9/13 TT일 대량 계획 외 볼륨(22.6km)으로 상쇄돼 예상보다 낮게 마감. <b>9/14주 최종 1.01(안전 구간)</b> — 9/14·9/18 미실시에도 9/20 사용자의 자율 장거리(17.13km, 당시엔 "휴식일"로 오인)가 상쇄해 실제 합산 45.86km로 마감, 계획 기준 추정치(0.90)보다 오히려 높게 확정. <b>9/21주는 새 주 7일 전체 등록 완료, 계획 기준 추정 1.22(안전 구간 상단 근접)</b> — 10K B레이스(10/18)를 4주 앞두고 빌드업 주간 진입, 9/27 하프특이 롱런(마지막 15분 4:25) 신규 포함. <b>8/25 트레드밀 v1 이후 자기조정형 워크아웃 계열 결과: 9/19 NSM-M v5는 4랩 중 3랩 타깃존 착지(마지막 랩만 2bpm 초과)로 개선 조짐을 보였으나, <u>9/22 NSM-L v6는 마지막 세트 평균HR이 자체상한을 9bpm이나 초과해 오히려 악화</u></b> — 원인은 시작 페이스가 목표보다 12~16초/km 빨라 세트를 거듭할수록 HR이 159→167→171bpm으로 누적 상승한 것으로 분석. 같은 날 사용자가 페이스 대신 가민 네이티브 HR존을 직접 인터벌에 내장한 v6 HR·v7 HR(스킵형 자기조정 포함)을 신설해 9/25부터 반영 — 이 설계가 "시작을 너무 빠르게" 문제를 해결하는지 다음 실전에서 재점검 필요. 9/21 회복런은 미실시(FAIL)로 기록됐으나 재배치 대상 아님.</p>
   </div>
 </section>
 
