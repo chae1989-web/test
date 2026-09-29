@@ -467,14 +467,14 @@
 <section>
   <div class="section-title">오늘</div>
   <div class="today-card">
-    <div class="label">9/29 (화) · 역치 크루즈(신규 카테고리)</div>
-    <div class="workout-name">역치 크루즈 8min×4 @4:13</div>
+    <div class="label">9/30 (수) · 이지런</div>
+    <div class="workout-name">이지런 40min</div>
     <div class="today-stats">
-      <div class="stat"><div class="k">목표</div><div class="v">페이스 4:12-4:15/km · HR상한 172bpm(2세트부터 초과 시 3세트 종료)</div></div>
-      <div class="stat"><div class="k">컨디션</div><div class="v">HRV 73ms(BALANCED, 워크아웃 자체 기준 64ms↑ 충족) · 수면 4.88h(64점 FAIR, 역대 최단)</div></div>
-      <div class="stat"><div class="k">어제(9/28)</div><div class="v">FAIL(미실시)</div></div>
+      <div class="stat"><div class="k">목표 HR</div><div class="v">≤145bpm</div></div>
+      <div class="stat"><div class="k">컨디션</div><div class="v">HRV 78ms(BALANCED) · 수면 6.28h(76점) FAIR</div></div>
+      <div class="stat"><div class="k">어제(9/29)</div><div class="v">FAIL(HR상한 172 초과 후에도 계속 진행, 최고183bpm)</div></div>
     </div>
-    <div class="today-note"><b>어제(9/28) 채점</b>: 활동 기록 없음 — 예정된 회복런 5km <b>미실시(FAIL)</b>, 재배치 대상 아님(이지런/회복런 미실시 규칙), 전날(9/27)은 실제 수행이었으므로 연속 미실시 아님. <b>중요 발견(사용자 신규 워크아웃 카테고리)</b>: `get_scheduled_workouts` 확인 중 9/29 세션이 예정돼 있던 NSM-M v7 HR에서 완전히 새로운 워크아웃 <b>"역치 크루즈 8min×4 @4:13"(1712043559, 2026-09-28 01:27 생성)로 교체</b>된 사실 확인 — 설명에 <b>"NSM과 다른 카테고리"</b>임을 명시한 역치(threshold) 크루즈 인터벌. 8분×4세트·휴식 2분 조깅, 페이스 4:12-4:15/km·파워 390-400W·HR상한 172bpm, <b>9/26 자체 갱신한 LT 재측정치(LT페이스 4:14/km, LTHR 167bpm, FTP 399W)를 근거로 설정</b>됨(기존 plan.md 기준값 LTHR165보다 2bpm 높음 — 자동화의 전역 기준값은 사용자 확정 지시 없이 임의로 변경하지 않고, 이 워크아웃 고유 규칙만 이 세션 채점에 우선 적용). 자기조정 3중 내장: ①2세트부터 HR 172 초과 시 3세트에서 종료 ②마지막 반복이 4:15보다 느리면 다음 세션 3초/km 하향 ③<b>당일 아침 HRV 64ms 미만이면 NSM mid로 자동 대체</b>. 10/18 목표 41:00·10/23 페이스 상향(4:10-4:13) 여부까지 판정 기준 명시. <b>오늘 HRV 73ms로 워크아웃 자체 기준(64ms) 충족 — 예정대로 역치 크루즈 진행</b>. 다만 수면 4.88h(64점)는 이번 로그 전체에서 가장 짧은 수치라 컨디션 유의 — 워크아웃 자체 내장 HR상한(172)·조기종료 규칙을 반드시 준수하도록 강조.</div>
+    <div class="today-note"><b>어제(9/29) 채점 — 역치 크루즈 첫 실전, 자체 안전규칙 미준수</b>: activity_id 24534286195 10.60km·50.26min(3015.6s)·평균153bpm. `get_activity_splits`(10랩)로 ACTIVE 4세트(각 480s=8min) 확인 — 페이스/평균HR/최고HR: 1세트 4:10/km·158·167, 2세트 4:12/km·166·<b>173(HR상한 172 최초 초과)</b>, 3세트 4:15/km·170·176(계속 초과), 4세트 4:18/km·173·<b>183(역대 최고 HR, 목표 페이스보다 3초/km 느림)</b>. 워크아웃 자체 규칙("2세트부터 172 초과 시 3세트에서 종료")을 적용하면 3세트에서 종료했어야 하나 <b>4세트까지 강행, HR이 173→183bpm까지 계속 상승</b> → 워크아웃별 우선규칙 위반으로 <b>세션 FAIL</b>(이번 로그 전체 통틀어 가장 높은 최고HR 기록). 4세트 페이스(4:18/km)가 목표(4:15) 대비 느려 워크아웃 자체 규칙상 <b>다음 역치 크루즈 세션은 페이스 3초/km 하향 적용 필요</b> — 다음 실전(스케줄 미정) 시 반영 권고. 전날 수면 4.88h로 역대 최단이었던 점과 무관치 않을 가능성 — 새로운 고강도 카테고리 도입 초기인 만큼 자체 안전장치(조기종료) 준수를 특히 강조할 필요. <b>중요 발견(스케줄 변경)</b>: 10/1 세션이 회복런5km에서 "이지 30min+스트라이드 4×100m"(1678859613, 9/13 TT 전날 사용 이력 있는 컨디셔닝 워크아웃)로 교체 확인 — 향후 TT/레이스 관련 세션 등장 가능성 계속 관찰. 오늘(9/30) 컨디션 HRV 78ms(BALANCED)·수면 6.28h(76점 FAIR) — 양호한 편, 조정 없이 이지런 진행.</div>
   </div>
 </section>
 
@@ -484,29 +484,29 @@
     <div class="weather-tile">
       <div class="t">12:00</div>
       <div class="temp">25°</div>
-      <div class="hum">습도 37%</div>
-      <div class="rain">☔ 1%</div>
+      <div class="hum">습도 42%</div>
+      <div class="rain">☔ 3%</div>
     </div>
     <div class="weather-tile">
       <div class="t">15:00</div>
-      <div class="temp">27°</div>
-      <div class="hum">습도 28%</div>
-      <div class="rain">☔ 0%</div>
+      <div class="temp">26°</div>
+      <div class="hum">습도 31%</div>
+      <div class="rain">☔ 1%</div>
     </div>
     <div class="weather-tile">
       <div class="t">18:00</div>
-      <div class="temp">24°</div>
-      <div class="hum">습도 37%</div>
-      <div class="rain">☔ 1%</div>
+      <div class="temp">22°</div>
+      <div class="hum">습도 69%</div>
+      <div class="rain">☔ 46%</div>
     </div>
     <div class="weather-tile">
       <div class="t">21:00</div>
-      <div class="temp">22°</div>
-      <div class="hum">습도 45%</div>
-      <div class="rain">☔ 1%</div>
+      <div class="temp">19°</div>
+      <div class="hum">습도 51%</div>
+      <div class="rain">☔ 12%</div>
     </div>
   </div>
-  <p class="weather-note">강수확률 0~1%로 쾌청 — 역치 크루즈 인터벌 진행에 최적의 날씨.</p>
+  <p class="weather-note">낮(1~3%)은 쾌청하나 저녁 6시 강수확률 46%로 급상승 — 오전~낮 실행 권장.</p>
 </section>
 
 <section>
@@ -514,7 +514,7 @@
   <div class="week-summary">
     <div class="box">
       <div class="k">실제 누적 (월~오늘)</div>
-      <div class="v">0km<span class="sep">·</span>0m</div>
+      <div class="v">10.6km<span class="sep">·</span>50m</div>
     </div>
     <div class="box">
       <div class="k">이번 주 계획 합계(7일 전체 등록)</div>
@@ -529,22 +529,22 @@
       <div class="day-workout"><div class="name">회복런 5km</div><div class="target">미실시</div></div>
       <span class="chip score miss">FAIL</span>
     </div>
-    <div class="day-row is-today">
+    <div class="day-row is-past">
       <div class="stripe type-subt"></div>
-      <div class="day-date">09/29<span class="dow">화</span><span class="today-tag">오늘</span></div>
-      <div class="day-workout"><div class="name">역치 크루즈 8min×4 @4:13(신규 교체)</div><div class="target">페이스 4:12-4:15/km · HR상한 172 · HRV&lt;64면 NSM mid 대체</div></div>
-      <span class="chip subt">역치</span>
+      <div class="day-date">09/29<span class="dow">화</span></div>
+      <div class="day-workout"><div class="name">역치 크루즈 8min×4 @4:13</div><div class="target">10.60km·50.3min·세트HR 167→173→176→183(2세트부터 상한172 초과, 4세트 강행)</div></div>
+      <span class="chip score miss">FAIL</span>
     </div>
-    <div class="day-row">
+    <div class="day-row is-today">
       <div class="stripe type-easy"></div>
-      <div class="day-date">09/30<span class="dow">수</span></div>
+      <div class="day-date">09/30<span class="dow">수</span><span class="today-tag">오늘</span></div>
       <div class="day-workout"><div class="name">이지런 40min</div><div class="target">목표 HR ≤145bpm</div></div>
       <span class="chip easy">EASY</span>
     </div>
     <div class="day-row">
       <div class="stripe type-easy"></div>
       <div class="day-date">10/01<span class="dow">목</span></div>
-      <div class="day-workout"><div class="name">회복런 5km</div><div class="target">목표 HR ≤135bpm</div></div>
+      <div class="day-workout"><div class="name">이지 30min+스트라이드 4×100m(교체)</div><div class="target">TT/레이스 전날 컨디셔닝 이력 있는 워크아웃</div></div>
       <span class="chip easy">EASY</span>
     </div>
     <div class="day-row">
@@ -566,36 +566,36 @@
       <span class="chip long">LONG</span>
     </div>
   </div>
-  <p style="font-size:11.5px;color:var(--text-faint);margin-top:8px;">※ 9/28 회복런 미실시(FAIL, 재배치 대상 아님). 9/29 세션이 NSM-M v7 HR에서 신규 카테고리 "역치 크루즈"(8min×4 @4:13, LT 재측정 기반)로 교체 — 워크아웃 자체에 HRV&lt;64 시 NSM mid 대체 규칙 내장, 오늘은 HRV 73ms로 기준 충족해 예정대로 진행.</p>
+  <p style="font-size:11.5px;color:var(--text-faint);margin-top:8px;">※ 9/28 회복런 미실시(FAIL). 9/29 역치 크루즈 첫 실전 FAIL — 2세트부터 HR상한(172) 초과했음에도 자체 조기종료 규칙을 지키지 않고 4세트까지 강행, 최고HR 183bpm(역대 최고) 기록. 다음 역치 세션엔 페이스 3초/km 하향 적용 예정. 10/1 세션이 회복런에서 TT 전날형 컨디셔닝 워크아웃으로 교체 — 향후 TT 가능성 관찰 중.</p>
 </section>
 
 <section>
   <div class="section-title">주간 날씨 (서울)</div>
   <div class="weekly-weather">
     <div class="ww-tile no-data">
-      <div class="d">월 9/28</div>
+      <div class="d">화 9/29</div>
       <div class="desc">지난 날</div>
     </div>
     <div class="ww-tile is-today">
-      <div class="d">화 9/29<br>오늘</div>
-      <div class="range">27°<span class="lo">/17°</span></div>
-      <div class="rain2">☔ 1%</div>
-      <div class="desc">쾌청 — 역치 크루즈 최적일</div>
-    </div>
-    <div class="ww-tile">
-      <div class="d">수 9/30</div>
-      <div class="range">26°<span class="lo">/18°</span></div>
-      <div class="rain2">☔ 43%</div>
-      <div class="desc">낮 쾌청, 저녁 이슬비</div>
+      <div class="d">수 9/30<br>오늘</div>
+      <div class="range">26°<span class="lo">/19°</span></div>
+      <div class="rain2">☔ 46%</div>
+      <div class="desc">낮 쾌청, 저녁 강한 비</div>
     </div>
     <div class="ww-tile">
       <div class="d">목 10/1</div>
-      <div class="range">22°<span class="lo">/15°</span></div>
+      <div class="range">21°<span class="lo">/15°</span></div>
       <div class="rain2">☔ 1%</div>
       <div class="desc">쾌청, 기온 큰 폭 하강</div>
     </div>
+    <div class="ww-tile">
+      <div class="d">금 10/2</div>
+      <div class="range">22°<span class="lo">/14°</span></div>
+      <div class="rain2">☔ 1%</div>
+      <div class="desc">쾌청 — NSM-S v8 HR 최적일</div>
+    </div>
   </div>
-  <p class="weather-note"><b>오늘(화, 역치 크루즈)은 0~1%로 쾌청</b> — 최적의 날씨. <b>내일(수)은 낮 쾌청·저녁 이슬비, 모레(목, 회복런)는 기온이 크게 떨어짐(최고 22°)</b>.</p>
+  <p class="weather-note"><b>오늘(수, 이지런)은 낮 1~3%로 쾌청하나 저녁 46%로 급상승</b> — 오전~낮 실행 권장. <b>내일(목)은 기온이 크게 떨어지고(최고 21°) 쾌청, 모레(금, NSM-S v8 HR)도 쾌청</b>.</p>
 </section>
 
 <section>
@@ -628,7 +628,7 @@
       <text x="526" y="56" text-anchor="middle" class="acwr-bar-label" fill="var(--success)">1.10</text>
       <text x="526" y="178" text-anchor="middle" class="acwr-axis-label" fill="var(--text-faint)">9/28</text>
     </svg>
-    <p class="weather-note" style="margin-top:2px;"><b>8/31주 최종 1.42(주의 구간)</b> — 계획 외 추가 세션이 주요 원인, 1.5 고위험 기준에는 못 미침. <b>9/7주 최종 0.89(안전 구간)</b> — 9/7·9/11·9/12 3일 미실시에도 9/13 TT일 대량 계획 외 볼륨(22.6km)으로 상쇄돼 예상보다 낮게 마감. <b>9/14주 최종 1.01(안전 구간)</b> — 9/14·9/18 미실시에도 9/20 사용자의 자율 장거리(17.13km, 당시엔 "휴식일"로 오인)가 상쇄해 실제 합산 45.86km로 마감. <b>9/21주 최종 1.14(안전 구간)</b> — 9/21·9/23 미실시에도 9/27 자율 러닝(9.44km, 이때도 처음엔 미등록으로 보였으나 실제 수행 확인)이 상쇄해 실제 합산 53.23km로 마감, 계획 기준 추정치(1.06)보다 높게 확정. <b>9/28주는 새 주 7일 전체 등록 완료, 계획 기준 추정 1.10(안전 구간)</b> — 10K B레이스(10/18)까지 3주 남은 빌드업 지속. <b>자기조정형 워크아웃 계열: 9/19 NSM-M v5(2bpm 초과)·9/22 NSM-L v6(9bpm 초과) 실패 이후, 9/24 NSM-M v7 HR·9/25 NSM-S v8 HR·9/26 하프특이 롱런까지 3연속 양호</b> — 페이스 기반에서 HR존 기반으로의 전환이 효과적인 것으로 판단됨. <b>오늘(9/29)은 사용자가 9/26 자체 LT 재측정(LTHR167·FTP399W) 결과를 반영해 신설한 "역치 크루즈"라는 완전히 새로운 카테고리(NSM과 별개)의 첫 실전</b> — HRV 게이트(64ms 미만 시 자동 대체)까지 내장된 가장 정교한 설계로, 10/18 B레이스 목표(41:00)와 직결된 핵심 체크포인트.</p>
+    <p class="weather-note" style="margin-top:2px;"><b>8/31주 최종 1.42(주의 구간)</b> — 계획 외 추가 세션이 주요 원인, 1.5 고위험 기준에는 못 미침. <b>9/7주 최종 0.89(안전 구간)</b> — 9/7·9/11·9/12 3일 미실시에도 9/13 TT일 대량 계획 외 볼륨(22.6km)으로 상쇄돼 예상보다 낮게 마감. <b>9/14주 최종 1.01(안전 구간)</b> — 9/14·9/18 미실시에도 9/20 사용자의 자율 장거리(17.13km, 당시엔 "휴식일"로 오인)가 상쇄해 실제 합산 45.86km로 마감. <b>9/21주 최종 1.14(안전 구간)</b> — 9/21·9/23 미실시에도 9/27 자율 러닝(9.44km, 이때도 처음엔 미등록으로 보였으나 실제 수행 확인)이 상쇄해 실제 합산 53.23km로 마감, 계획 기준 추정치(1.06)보다 높게 확정. <b>9/28주는 새 주 7일 전체 등록 완료, 계획 기준 추정 1.10(안전 구간)</b> — 10K B레이스(10/18)까지 3주 남은 빌드업 지속. <b>자기조정형 워크아웃 계열: 9/19 NSM-M v5(2bpm 초과)·9/22 NSM-L v6(9bpm 초과) 실패 이후, 9/24 NSM-M v7 HR·9/25 NSM-S v8 HR·9/26 하프특이 롱런까지 3연속 양호</b> — 페이스 기반에서 HR존 기반으로의 전환이 효과적인 것으로 판단됨. <b>9/29 "역치 크루즈"(9/26 자체 LT 재측정 기반 신규 카테고리) 첫 실전은 2세트부터 HR상한(172) 초과에도 자체 조기종료 규칙을 지키지 않고 4세트까지 강행, 최고HR 183bpm(역대 최고)으로 FAIL</b> — 정교한 자기조정 설계도 실제 실행에서 규칙 준수가 관건임을 재확인, 다음 역치 세션엔 페이스 3초/km 하향이 자체 규정돼 있어 반영 예정.</p>
   </div>
 </section>
 
