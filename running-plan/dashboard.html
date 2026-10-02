@@ -467,14 +467,14 @@
 <section>
   <div class="section-title">오늘</div>
   <div class="today-card">
-    <div class="label">10/2 (금) · 이지+스트라이드(스케줄 교체)</div>
-    <div class="workout-name">이지 30min + 스트라이드 4×100m</div>
+    <div class="label">10/3 (토) · 이지런</div>
+    <div class="workout-name">이지런 40min</div>
     <div class="today-stats">
-      <div class="stat"><div class="k">목표</div><div class="v">HR 115~140(조깅) + 완전회복 스트라이드 4회</div></div>
-      <div class="stat"><div class="k">컨디션</div><div class="v">HRV/수면 아직 미동기화</div></div>
-      <div class="stat"><div class="k">어제(10/1)</div><div class="v">양호(9.82km·49.3min, NSM-S v8 HR 10세트 전부 타깃존 내 — 역대 최고 실행)</div></div>
+      <div class="stat"><div class="k">목표 HR</div><div class="v">≤145bpm</div></div>
+      <div class="stat"><div class="k">컨디션</div><div class="v">HRV 78ms(BALANCED) · 수면 3.95h(52점 POOR, 역대 최악)</div></div>
+      <div class="stat"><div class="k">어제(10/2)</div><div class="v">FAIL(미실시)</div></div>
     </div>
-    <div class="today-note"><b>어제(10/1) 채점 — 자기조정 워크아웃 계열 역대 최고 실행</b>: 예정은 "이지 30min+스트라이드"였으나 실제 수행은 activity_id 24567524268 "NSM short(3min×8-10) v8 HR" 9.82km·49.3min(2960.1s)·평균133bpm — <b>또다시 이지/컨디셔닝 예정일에 사용자가 자체적으로 sub-threshold를 수행</b>(9/19·9/22·9/24와 동일 패턴, 실제 수행 기준으로 채점). `get_activity_splits`(21랩)로 ACTIVE 세트 확인 — <b>10세트 전부 완주(최대 연장 한도)</b>, 세트별 평균HR 135→137→141→142→141→141→141→139→138→139bpm, 최고HR도 146~154bpm 범위로 <b>전 세트가 타깃존(145~166) 하단에 안정적으로 머물렀고 조기종료 기준(168)과는 거리가 멂</b> — 후반 세트에서 HR이 오히려 안정/소폭 하락하는 이상적 페이싱 → <b>세션 양호</b>(9/25의 8세트 기록을 넘어서는 지금까지 최고 실행). `get_scheduled_workouts` 확인 결과 <b>10/2 세션이 원래 NSM-S v8 HR에서 "이지 30min+스트라이드"로 맞바뀜</b>(10/1↔10/2 내용 교체) — 사용자가 하드 세션을 하루 당겨 수행하고 이지 세션을 하루 미룬 것으로 판단, 순서만 바뀌었을 뿐 주간 구성 자체는 유지. 오늘(10/2) 컨디션 미동기화 — 조정 없이 교체된 이지+스트라이드 세션 그대로 진행.</div>
+    <div class="today-note"><b>어제(10/2) 채점</b>: 활동 기록 없음 — 예정된 "이지 30min+스트라이드" <b>미실시(FAIL)</b>, 재배치 대상 아님(이지런 미실시 규칙), 10/1은 실제 수행(양호)이었으므로 연속 미실시 아님. <b>중요 발견(대형 스케줄 업데이트)</b>: `get_scheduled_workouts`(10/3~10/9) 확인 중 세 가지 신규 변경 발견 — ① <b>10/4 하프특이 롱런이 "마지막 20분 4:18-4:22/km"로 업그레이드</b>(기존 15분·4:25에서 지속시간+5분·페이스-5초 강화, 9/26 실행 결과를 토대로 2026-10-02 생성), 마감HR165 초과 시 남은 시간 4:25로 하향하는 자기조정 포함. ② <b>10/6 NSM-L이 "v8"(페이스 4:25-4:29 중심, HR160은 2차 확인용)로 교체</b> — <b>2026-10-01 LT 재측정(4:10/km)을 근거</b>로, 9/26 측정(4:14)보다도 더 빨라져 단기간 2차 LT 갱신 확인. ③ <b>10/9에 "10K 리허설 5×1km(3@4:08+2@4:01)" 신규 등록 확인</b>(2026-09-22 생성, 10/18 B레이스 직결 리허설 — 3번째 반복 종료HR 172 이하일 때만 마지막 2개 가속하는 조건부 설계, 목표 10K 41:00~41:30 직결). 세 워크아웃 모두 "가민 워크아웃 라이브러리" 표에 문서화 완료. 오늘(10/3) 컨디션: HRV 78ms(BALANCED)로 양호하나 <b>수면 3.95h(52점 POOR)로 이번 로그 전체 최악</b> — 오늘은 이미 이지런이라 조정 불필요하나, <b>내일(10/4)이 한층 강화된 롱런(20분 고강도 마무리)인 만큼 수면 추이를 반드시 재확인 필요</b>.</div>
   </div>
 </section>
 
@@ -483,30 +483,30 @@
   <div class="weather-strip">
     <div class="weather-tile">
       <div class="t">12:00</div>
-      <div class="temp">20°</div>
-      <div class="hum">습도 21%</div>
-      <div class="rain">☔ 0%</div>
+      <div class="temp">19°</div>
+      <div class="hum">습도 39%</div>
+      <div class="rain">☔ 10%</div>
     </div>
     <div class="weather-tile">
       <div class="t">15:00</div>
-      <div class="temp">22°</div>
-      <div class="hum">습도 20%</div>
-      <div class="rain">☔ 0%</div>
+      <div class="temp">20°</div>
+      <div class="hum">습도 43%</div>
+      <div class="rain">☔ 10%</div>
     </div>
     <div class="weather-tile">
       <div class="t">18:00</div>
       <div class="temp">19°</div>
-      <div class="hum">습도 26%</div>
-      <div class="rain">☔ 0%</div>
+      <div class="hum">습도 50%</div>
+      <div class="rain">☔ 12%</div>
     </div>
     <div class="weather-tile">
       <div class="t">21:00</div>
-      <div class="temp">17°</div>
-      <div class="hum">습도 32%</div>
-      <div class="rain">☔ 1%</div>
+      <div class="temp">18°</div>
+      <div class="hum">습도 53%</div>
+      <div class="rain">☔ 13%</div>
     </div>
   </div>
-  <p class="weather-note">강수확률 0~1%로 쾌청 — 이지+스트라이드 진행에 좋은 날씨.</p>
+  <p class="weather-note">강수확률 10~13%로 종일 흐림 — 이지런 진행엔 무난.</p>
 </section>
 
 <section>
@@ -547,55 +547,55 @@
       <div class="day-workout"><div class="name">NSM-S v8 HR (10세트 완주)</div><div class="target">9.82km·49.3min·세트평균 135~142bpm(전 세트 타깃존 하단, 역대 최고 실행)</div></div>
       <span class="chip score success">양호</span>
     </div>
+    <div class="day-row is-past">
+      <div class="stripe type-easy"></div>
+      <div class="day-date">10/02<span class="dow">금</span></div>
+      <div class="day-workout"><div class="name">이지 30min+스트라이드 4×100m</div><div class="target">미실시</div></div>
+      <span class="chip score miss">FAIL</span>
+    </div>
     <div class="day-row is-today">
       <div class="stripe type-easy"></div>
-      <div class="day-date">10/02<span class="dow">금</span><span class="today-tag">오늘</span></div>
-      <div class="day-workout"><div class="name">이지 30min+스트라이드 4×100m(10/1과 교체)</div><div class="target">HR 115~140 + 완전회복 스트라이드</div></div>
-      <span class="chip easy">EASY</span>
-    </div>
-    <div class="day-row">
-      <div class="stripe type-easy"></div>
-      <div class="day-date">10/03<span class="dow">토</span></div>
+      <div class="day-date">10/03<span class="dow">토</span><span class="today-tag">오늘</span></div>
       <div class="day-workout"><div class="name">이지런 40min</div><div class="target">목표 HR ≤145bpm</div></div>
       <span class="chip easy">EASY</span>
     </div>
     <div class="day-row">
       <div class="stripe type-long"></div>
       <div class="day-date">10/04<span class="dow">일</span></div>
-      <div class="day-workout"><div class="name">롱런 80min 하프특이</div><div class="target">마지막 15분 페이스 4:25/km</div></div>
+      <div class="day-workout"><div class="name">롱런 80min 하프특이(업그레이드)</div><div class="target">마지막 20분 페이스 4:18-4:22/km · 마감HR&gt;165시 4:25로 하향</div></div>
       <span class="chip long">LONG</span>
     </div>
   </div>
-  <p style="font-size:11.5px;color:var(--text-faint);margin-top:8px;">※ 9/28 회복런 미실시(FAIL), 9/29 역치 크루즈 FAIL(최고183bpm), 9/30 이지런 양호, 10/1 NSM-S v8 HR 10세트 전부 타깃존 내로 역대 최고 실행(양호, 이지 예정일에 하드 세션 대체). 10/1·10/2 세션 내용이 맞바뀌어 오늘은 이지+스트라이드.</p>
+  <p style="font-size:11.5px;color:var(--text-faint);margin-top:8px;">※ 9/28·10/2 미실시(FAIL), 9/29 역치 크루즈 FAIL(최고183bpm), 9/30 이지런·10/1 NSM-S v8 HR(역대 최고) 양호. 10/4 롱런이 "마지막 20분 4:18-4:22"로 업그레이드, 10/6 NSM-L이 v8(10/1 LT 4:10 재갱신 기반)로 교체, 10/9에 10K 리허설(5×1km) 신규 등록 — 10/18 B레이스 직결 빌드업 본격화.</p>
 </section>
 
 <section>
   <div class="section-title">주간 날씨 (서울)</div>
   <div class="weekly-weather">
     <div class="ww-tile no-data">
-      <div class="d">목 10/1</div>
+      <div class="d">금 10/2</div>
       <div class="desc">지난 날</div>
     </div>
     <div class="ww-tile is-today">
-      <div class="d">금 10/2<br>오늘</div>
-      <div class="range">22°<span class="lo">/13°</span></div>
-      <div class="rain2">☔ 1%</div>
-      <div class="desc">쾌청 — 이지+스트라이드 최적일</div>
-    </div>
-    <div class="ww-tile">
-      <div class="d">토 10/3</div>
-      <div class="range">22°<span class="lo">/13°</span></div>
-      <div class="rain2">☔ 12%</div>
+      <div class="d">토 10/3<br>오늘</div>
+      <div class="range">21°<span class="lo">/13°</span></div>
+      <div class="rain2">☔ 13%</div>
       <div class="desc">종일 흐림</div>
     </div>
     <div class="ww-tile">
       <div class="d">일 10/4</div>
-      <div class="range">24°<span class="lo">/16°</span></div>
-      <div class="rain2">☔ 19%</div>
-      <div class="desc">낮 쾌청, 저녁 비 가능성 — 롱런 최적</div>
+      <div class="range">24°<span class="lo">/15°</span></div>
+      <div class="rain2">☔ 14%</div>
+      <div class="desc">낮 쾌청 — 업그레이드 롱런 최적</div>
+    </div>
+    <div class="ww-tile">
+      <div class="d">월 10/5</div>
+      <div class="range">20°<span class="lo">/15°</span></div>
+      <div class="rain2">☔ 49%</div>
+      <div class="desc">새벽 강한 비, 낮에 갬</div>
     </div>
   </div>
-  <p class="weather-note"><b>오늘(금)은 0~1%로 쾌청</b> — 이지+스트라이드에 최적. <b>내일(토)은 종일 흐림, 모레(일, 하프특이 롱런)는 낮 쾌청해 낮 시간대 권장</b>.</p>
+  <p class="weather-note"><b>오늘(토)은 10~13%로 종일 흐림</b> — 이지런 진행엔 무난. <b>내일(일, 업그레이드 롱런)은 낮 쾌청해 최적, 모레(월)는 새벽 강한 비 후 갬</b>.</p>
 </section>
 
 <section>
@@ -628,7 +628,7 @@
       <text x="526" y="56" text-anchor="middle" class="acwr-bar-label" fill="var(--success)">1.10</text>
       <text x="526" y="178" text-anchor="middle" class="acwr-axis-label" fill="var(--text-faint)">9/28</text>
     </svg>
-    <p class="weather-note" style="margin-top:2px;"><b>8/31주 최종 1.42(주의 구간)</b> — 계획 외 추가 세션이 주요 원인, 1.5 고위험 기준에는 못 미침. <b>9/7주 최종 0.89(안전 구간)</b> — 9/7·9/11·9/12 3일 미실시에도 9/13 TT일 대량 계획 외 볼륨(22.6km)으로 상쇄돼 예상보다 낮게 마감. <b>9/14주 최종 1.01(안전 구간)</b> — 9/14·9/18 미실시에도 9/20 사용자의 자율 장거리(17.13km, 당시엔 "휴식일"로 오인)가 상쇄해 실제 합산 45.86km로 마감. <b>9/21주 최종 1.14(안전 구간)</b> — 9/21·9/23 미실시에도 9/27 자율 러닝(9.44km, 이때도 처음엔 미등록으로 보였으나 실제 수행 확인)이 상쇄해 실제 합산 53.23km로 마감, 계획 기준 추정치(1.06)보다 높게 확정. <b>9/28주는 새 주 7일 전체 등록 완료, 계획 기준 추정 1.10(안전 구간)</b> — 10K B레이스(10/18)까지 3주 남은 빌드업 지속. <b>자기조정형 워크아웃 계열: 9/19 NSM-M v5(2bpm 초과)·9/22 NSM-L v6(9bpm 초과) 실패 이후, 9/24 NSM-M v7 HR·9/25 NSM-S v8 HR·9/26 하프특이 롱런까지 3연속 양호</b> — 페이스 기반에서 HR존 기반으로의 전환이 효과적인 것으로 판단됨. <b>9/29 "역치 크루즈" 첫 실전은 자체 조기종료 규칙 미준수로 최고HR 183bpm FAIL</b>이었으나, <b><u>바로 이틀 뒤 10/1 NSM-S v8 HR은 10세트(최대 연장) 전부 타깃존 하단에서 안정적으로 완주 — 지금까지 중 가장 잘 통제된 실행</u></b> — 같은 사용자의 서로 다른 워크아웃 카테고리에서 규칙 준수 여부에 따라 결과가 극명하게 갈리는 패턴이 뚜렷해짐.</p>
+    <p class="weather-note" style="margin-top:2px;"><b>8/31주 최종 1.42(주의 구간)</b> — 계획 외 추가 세션이 주요 원인, 1.5 고위험 기준에는 못 미침. <b>9/7주 최종 0.89(안전 구간)</b> — 9/7·9/11·9/12 3일 미실시에도 9/13 TT일 대량 계획 외 볼륨(22.6km)으로 상쇄돼 예상보다 낮게 마감. <b>9/14주 최종 1.01(안전 구간)</b> — 9/14·9/18 미실시에도 9/20 사용자의 자율 장거리(17.13km, 당시엔 "휴식일"로 오인)가 상쇄해 실제 합산 45.86km로 마감. <b>9/21주 최종 1.14(안전 구간)</b> — 9/21·9/23 미실시에도 9/27 자율 러닝(9.44km, 이때도 처음엔 미등록으로 보였으나 실제 수행 확인)이 상쇄해 실제 합산 53.23km로 마감, 계획 기준 추정치(1.06)보다 높게 확정. <b>9/28주는 새 주 7일 전체 등록 완료, 계획 기준 추정 1.10(안전 구간)</b> — 10K B레이스(10/18)까지 3주 남은 빌드업 지속. <b>자기조정형 워크아웃 계열: 9/19 NSM-M v5(2bpm 초과)·9/22 NSM-L v6(9bpm 초과) 실패 이후, 9/24 NSM-M v7 HR·9/25 NSM-S v8 HR·9/26 하프특이 롱런까지 3연속 양호</b> — 페이스 기반에서 HR존 기반으로의 전환이 효과적인 것으로 판단됨. <b>9/29 "역치 크루즈" 첫 실전은 자체 조기종료 규칙 미준수로 최고HR 183bpm FAIL</b>이었으나, <b><u>바로 이틀 뒤 10/1 NSM-S v8 HR은 10세트(최대 연장) 전부 타깃존 하단에서 안정적으로 완주 — 지금까지 중 가장 잘 통제된 실행</u></b>. <b>10/2 사용자가 LT를 재측정(4:10/km, 9/26의 4:14보다도 빨라짐)하며 10/4 롱런 마무리 강화(20분·4:18-4:22)·10/6 NSM-L v8 교체·10/9 10K 리허설(5×1km) 신규 등록까지 대규모 빌드업 강화를 단행</b> — 10K B레이스(10/18) 직결 사이클 본격 진입.</p>
   </div>
 </section>
 
