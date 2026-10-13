@@ -467,14 +467,14 @@
 <section>
   <div class="section-title">오늘</div>
   <div class="today-card">
-    <div class="label">10/13 (화) · 완전휴식 (종아리 안전조치) · 테스트런 전날</div>
-    <div class="workout-name">완전휴식 마지막 날 — 내일(10/14) 테스트런</div>
+    <div class="label">10/14 (수) · 테스트런 당일 · 결정의 날</div>
+    <div class="workout-name">테스트 런 20min @5:25-5:35 (종아리 판정)</div>
     <div class="today-stats">
-      <div class="stat"><div class="k">내일 결정 포인트</div><div class="v">10/14 테스트런 20min@5:30</div></div>
-      <div class="stat"><div class="k">컨디션</div><div class="v">HRV/수면 데이터 없음 (완전휴식일)</div></div>
-      <div class="stat"><div class="k">어제(10/12)</div><div class="v">완전휴식 지시 그대로 준수(활동 없음)</div></div>
+      <div class="stat"><div class="k">판정 기준</div><div class="v">20분 무증상→일정 유지 / 10분 재발→즉시 중단</div></div>
+      <div class="stat"><div class="k">날씨</div><div class="v">쾌청·쌀쌀(12-19°C, 강수 0%) — 최적 조건</div></div>
+      <div class="stat"><div class="k">어제(10/13)</div><div class="v">완전휴식 지시 준수(활동 없음) — 5일 완료</div></div>
     </div>
-    <div class="today-note"><b>어제(10/12) 확인</b>: 활동 기록 없음 — 완전휴식 지시 계속 준수(미실시/FAIL 대상 아님). 오늘(10/13)로 완전휴식 기간이 마무리되고 <b>내일(10/14) 테스트 런 20min@5:25-5:35</b>이 B레이스 참가 여부를 가르는 분기점 — 20분 내내 증상 없으면 10/16 프라이머 포함 레이스 일정 유지, 10분 전후 같은 느낌 재발 시 즉시 중단→10/18 B레이스 취소+정밀검사. 날씨도 내일은 쾌청·쌀쌀(12-19°C, 강수확률 0%)로 테스트에 좋은 조건.</div>
+    <div class="today-note"><b>오늘이 결정의 날</b>: "테스트 런 20min@5:30(종아리 판정)"이 아직 `completed: false`(이 루틴은 이른 아침에 실행되어 당일 수행 전 — 정상). 판정 기준: 20분 내내 증상 없으면 10/16 프라이머 포함 레이스 일정 유지, 10분 전후 같은 느낌 재발 시 즉시 중단→10/18 B레이스 취소+스포츠의학과 구획압력검사. 오늘은 이 자체 판정 기준에 맡기고 자동화가 임의로 개입하지 않음. <b>어제(10/13) 확인</b>: 활동 없음 — 완전휴식 지시 계속 준수, 이로써 10/9~10/13 5일 완전휴식이 지시대로 온전히 완료됨. <b>테스트 실제 결과는 내일(10/15) 루틴에서 확인·채점 예정</b>.</div>
   </div>
 </section>
 
@@ -482,31 +482,31 @@
   <div class="section-title">오늘 날씨 (서울)</div>
   <div class="weather-strip">
     <div class="weather-tile">
+      <div class="t">09:00</div>
+      <div class="temp">14°</div>
+      <div class="hum">습도 17%</div>
+      <div class="rain">☔ 0%</div>
+    </div>
+    <div class="weather-tile">
       <div class="t">12:00</div>
-      <div class="temp">16°</div>
-      <div class="hum">습도 83%</div>
-      <div class="rain">☔ 25%</div>
+      <div class="temp">18°</div>
+      <div class="hum">습도 16%</div>
+      <div class="rain">☔ 0%</div>
     </div>
     <div class="weather-tile">
       <div class="t">15:00</div>
-      <div class="temp">20°</div>
-      <div class="hum">습도 62%</div>
-      <div class="rain">☔ 16%</div>
+      <div class="temp">19°</div>
+      <div class="hum">습도 24%</div>
+      <div class="rain">☔ 0%</div>
     </div>
     <div class="weather-tile">
       <div class="t">18:00</div>
-      <div class="temp">18°</div>
-      <div class="hum">습도 69%</div>
-      <div class="rain">☔ 36%</div>
-    </div>
-    <div class="weather-tile">
-      <div class="t">21:00</div>
-      <div class="temp">16°</div>
-      <div class="hum">습도 60%</div>
-      <div class="rain">☔ 3%</div>
+      <div class="temp">17°</div>
+      <div class="hum">습도 42%</div>
+      <div class="rain">☔ 9%</div>
     </div>
   </div>
-  <p class="weather-note">새벽~오전 강한 비(최대 73%), 낮부터 갬 — 오늘은 완전휴식일(종아리 안전조치)이라 날씨 영향 없음. 내일(수) 테스트런은 쾌청 예보.</p>
+  <p class="weather-note">아침~낮 쾌청·쌀쌀(강수확률 0%), 저녁 들어 9~10%로 소폭 상승 — 테스트런에 이상적인 조건, 오전 중 실행 권장.</p>
 </section>
 
 <section>
@@ -529,15 +529,15 @@
       <div class="day-workout"><div class="name">완전휴식 (종아리 안전조치)</div><div class="target">지시 준수 확인 — 활동 없음</div></div>
       <span class="chip rest">REST</span>
     </div>
-    <div class="day-row is-today">
+    <div class="day-row is-past">
       <div class="stripe type-rest"></div>
-      <div class="day-date">10/13<span class="dow">화</span><span class="today-tag">오늘</span></div>
-      <div class="day-workout"><div class="name">완전휴식 (종아리 안전조치)</div><div class="target">완전휴식 마지막 날 · 내일 테스트런</div></div>
+      <div class="day-date">10/13<span class="dow">화</span></div>
+      <div class="day-workout"><div class="name">완전휴식 (종아리 안전조치)</div><div class="target">지시 준수 — 5일 완전휴식 완료</div></div>
       <span class="chip rest">REST</span>
     </div>
-    <div class="day-row">
+    <div class="day-row is-today">
       <div class="stripe type-subt"></div>
-      <div class="day-date">10/14<span class="dow">수</span></div>
+      <div class="day-date">10/14<span class="dow">수</span><span class="today-tag">오늘</span></div>
       <div class="day-workout"><div class="name">테스트 런 20min @5:25-5:35</div><div class="target">종아리 판정 — 증상 재발 시 즉시 중단</div></div>
       <span class="chip subt">결정포인트</span>
     </div>
@@ -573,25 +573,25 @@
   <div class="section-title">주간 날씨 (서울)</div>
   <div class="weekly-weather">
     <div class="ww-tile is-today">
-      <div class="d">화 10/13<br>오늘</div>
-      <div class="range">22°<span class="lo">/15°</span></div>
-      <div class="rain2">☔ 73%</div>
-      <div class="desc">새벽~오전 강한 비, 낮부터 갬 — 완전휴식(종아리)</div>
-    </div>
-    <div class="ww-tile">
-      <div class="d">수 10/14</div>
+      <div class="d">수 10/14<br>오늘</div>
       <div class="range">19°<span class="lo">/12°</span></div>
-      <div class="rain2">☔ 1%</div>
+      <div class="rain2">☔ 2%</div>
       <div class="desc">쾌청·쌀쌀 — 테스트런 최적 조건</div>
     </div>
     <div class="ww-tile">
       <div class="d">목 10/15</div>
-      <div class="range">20°<span class="lo">/14°</span></div>
+      <div class="range">21°<span class="lo">/14°</span></div>
       <div class="rain2">☔ 16%</div>
       <div class="desc">대체로 쾌청, 낮 한때 흐림 — 조건부 일정</div>
     </div>
+    <div class="ww-tile">
+      <div class="d">금 10/16</div>
+      <div class="range">23°<span class="lo">/16°</span></div>
+      <div class="rain2">☔ 27%</div>
+      <div class="desc">오전 흐림, 낮부터 갬 — 조건부 프라이머</div>
+    </div>
   </div>
-  <p class="weather-note"><b>오늘(화)은 새벽~오전 강한 비(최대 73%), 낮부터 갬</b> — 완전휴식일이라 영향 없음. <b>내일(수, 10/14 테스트런 당일)은 쾌청·쌀쌀(12-19°C, 강수확률 0~1%)로 테스트에 이상적인 조건</b>, 모레(목)도 대체로 양호.</p>
+  <p class="weather-note"><b>오늘(수, 테스트런 당일)은 쾌청·쌀쌀(12-19°C, 강수확률 0~2%)로 이상적인 조건</b>. 내일(목)도 대체로 양호, 모레(금, 10K 프라이머 조건부)는 오전 흐리나 낮부터 갬.</p>
 </section>
 
 <section>
