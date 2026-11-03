@@ -467,14 +467,14 @@
 <section>
   <div class="section-title">오늘</div>
   <div class="today-card">
-    <div class="label">11/03 (화) · NSM long(10min×3) v8</div>
-    <div class="workout-name">페이스 4:25-4:29/km, HR상한160(2차)</div>
+    <div class="label">11/04 (수) · 이지런 40min</div>
+    <div class="workout-name">목표 HR ≤145bpm</div>
     <div class="today-stats">
-      <div class="stat"><div class="k">어제(11/2) 회복런</div><div class="v">양호 — 5.0km·30.6min·평균HR124(목표 정확히 일치)</div></div>
-      <div class="stat"><div class="k">오늘 날씨</div><div class="v">⚠️ 조회 실패 — 전날 예보로 대체(대체로 양호, 실안개)</div></div>
-      <div class="stat"><div class="k">⚠️ 레이스 불일치</div><div class="v">11/1 사실 확정 — plan.md 표 갱신은 사용자 확인 필요</div></div>
+      <div class="stat"><div class="k">어제(11/3) NSM-L v8</div><div class="v">FAIL — 과다강도(페이스 15-21초/km 초과, HR178)</div></div>
+      <div class="stat"><div class="k">오늘 날씨</div><div class="v">안개·흐림·실안개(8~17°C)</div></div>
+      <div class="stat"><div class="k">⚠️ 금요일(11/6)</div><div class="v">한파급 추위 예고(최저4°C) — NSM-S v9일</div></div>
     </div>
-    <div class="today-note"><b>어제(11/2) 채점</b>: activity_id 24935059411 "회복런 5km" 5000.0m·30.55min·평균HR124bpm — 연속형(회복런, 거리 목표) 규칙 적용, volume_ratio=1.0(정확히 일치), HR124&lt;133 → <b>양호</b>. 오늘은 NSM-L v8(10min×3) — 페이스 1차, HR상한160 2차. <b>⚠️ 오늘 날씨 조회 실패</b>: `wttr.in` 접속이 3회 재시도 모두 실패(연결 재설정 오류) — 아래 타일은 전날(11/2) 조회분의 11/3 예보를 그대로 표시한 것으로, 다음 실행에서 재조회 예정.</div>
+    <div class="today-note"><b>어제(11/3) 채점 — NSM-L v8, 과다강도 FAIL</b>: activity_id 24951301977 9.23km·44.35min·전체평균HR153bpm. `get_activity_splits`(ACTIVE랩) 확인 — 3세트 전부 완주했으나 <b>페이스가 목표(4:25-4:29/km)보다 전 세트 15~21초/km 빠름</b>(1세트4:10.6·2세트4:10.1·3세트4:08.1/km, 사실상 템포 강도). 평균HR도 2·3세트(166·168)에서 2차 상한(160) 초과, <b>max_hr도 2세트176·3세트178로 전역 Soft Ceiling(167) 초과</b>(이 워크아웃엔 별도 오프셋 규정 없어 전역 기준 적용) → <b>FAIL</b>(과다강도, 재배치 대상 아님 — 규칙상 과다강도 FAIL은 순환 로테이션 그대로 유지). ⚠️ 11/1 템포 세션의 불완전 수행(HR드리프트 과다)에 이어 과다강도 패턴이 반복됨 — 11/8 하프마라톤 최종판정 롱런을 앞두고 페이싱 통제 여부를 계속 지켜볼 필요. 오늘은 이지런 40min — 안개·흐림이나 큰 지장 없음. <b>금요일(11/6, NSM-S v9일)에 한파급 추위(최저4°C)</b> 예보돼 있어 미리 안내.</div>
   </div>
 </section>
 
@@ -483,30 +483,30 @@
   <div class="weather-strip">
     <div class="weather-tile">
       <div class="t">09:00</div>
-      <div class="temp">9°</div>
-      <div class="hum">습도 55%</div>
-      <div class="rain">☔ 6%</div>
+      <div class="temp">10°</div>
+      <div class="hum">습도 82%</div>
+      <div class="rain">☔ 25%</div>
     </div>
     <div class="weather-tile">
       <div class="t">12:00</div>
-      <div class="temp">14°</div>
-      <div class="hum">습도 39%</div>
-      <div class="rain">☔ 5%</div>
+      <div class="temp">15°</div>
+      <div class="hum">습도 60%</div>
+      <div class="rain">☔ 14%</div>
     </div>
     <div class="weather-tile">
       <div class="t">15:00</div>
-      <div class="temp">15°</div>
-      <div class="hum">습도 46%</div>
-      <div class="rain">☔ 5%</div>
+      <div class="temp">16°</div>
+      <div class="hum">습도 42%</div>
+      <div class="rain">☔ 10%</div>
     </div>
     <div class="weather-tile">
       <div class="t">18:00</div>
       <div class="temp">13°</div>
-      <div class="hum">습도 61%</div>
-      <div class="rain">☔ 8%</div>
+      <div class="hum">습도 54%</div>
+      <div class="rain">☔ 13%</div>
     </div>
   </div>
-  <p class="weather-note">⚠️ 오늘 실시간 조회 실패 — 전날(11/2) 조회분의 예보로 대체 표시. 대체로 양호(5~15°C), 낮~저녁 실안개(smoky haze) 섞일 수 있음 — NSM-L v8 진행에 큰 지장 없음.</p>
+  <p class="weather-note">날씨 조회 정상 복구. 아침 안개, 낮 흐림, 저녁 실안개(smoky haze) — 이지런 진행에 큰 지장 없음.</p>
 </section>
 
 <section>
@@ -514,7 +514,7 @@
   <div class="week-summary">
     <div class="box">
       <div class="k">실제 누적 (월~오늘)</div>
-      <div class="v">5.0km<span class="sep">·</span>30.6min</div>
+      <div class="v">14.23km<span class="sep">·</span>1h15m</div>
     </div>
     <div class="box">
       <div class="k">이번 주 계획 합계(⚠️ 고위험 추정)</div>
@@ -529,15 +529,15 @@
       <div class="day-workout"><div class="name">회복런 5km</div><div class="target">5.0km·30.6min·평균HR124</div></div>
       <span class="chip score success">양호</span>
     </div>
-    <div class="day-row is-today">
+    <div class="day-row is-past">
       <div class="stripe type-subt"></div>
-      <div class="day-date">11/03<span class="dow">화</span><span class="today-tag">오늘</span></div>
-      <div class="day-workout"><div class="name">NSM long(10min×3) v8</div><div class="target">페이스 4:25-4:29/km, HR상한160(2차)</div></div>
-      <span class="chip subt">NSM-L</span>
+      <div class="day-date">11/03<span class="dow">화</span></div>
+      <div class="day-workout"><div class="name">NSM long(10min×3) v8</div><div class="target">과다강도 — 페이스 15-21초/km 빠름, HR178</div></div>
+      <span class="chip score miss">FAIL</span>
     </div>
-    <div class="day-row">
+    <div class="day-row is-today">
       <div class="stripe type-easy"></div>
-      <div class="day-date">11/04<span class="dow">수</span></div>
+      <div class="day-date">11/04<span class="dow">수</span><span class="today-tag">오늘</span></div>
       <div class="day-workout"><div class="name">이지런 40min</div><div class="target">목표 HR ≤145bpm</div></div>
       <span class="chip easy">EASY</span>
     </div>
@@ -573,25 +573,25 @@
   <div class="section-title">주간 날씨 (서울)</div>
   <div class="weekly-weather">
     <div class="ww-tile is-today">
-      <div class="d">화 11/03<br>오늘·⚠️ 재조회 실패</div>
-      <div class="range">15°<span class="lo">/5°</span></div>
-      <div class="rain2">☔ 5~13%</div>
-      <div class="desc">전날 예보 대체 — 대체로 양호, 실안개 — NSM-L v8</div>
+      <div class="d">수 11/04<br>오늘</div>
+      <div class="range">17°<span class="lo">/8°</span></div>
+      <div class="rain2">☔ 10~25%</div>
+      <div class="desc">안개·흐림·실안개 — 이지런40</div>
     </div>
     <div class="ww-tile">
-      <div class="d">수 11/04</div>
-      <div class="range">17°<span class="lo">/8°</span></div>
-      <div class="rain2">☔ 5~24%</div>
-      <div class="desc">흐림+실안개 지속 — 이지런40</div>
-    </div>
-    <div class="ww-tile no-data">
       <div class="d">목 11/05</div>
-      <div class="range">—</div>
-      <div class="rain2">예보 범위 밖</div>
-      <div class="desc">다음 실행에서 재조회</div>
+      <div class="range">17°<span class="lo">/11°</span></div>
+      <div class="rain2">☔ 2~23%</div>
+      <div class="desc">아침 약한 비 후 쾌청 — 이지+스트라이드</div>
+    </div>
+    <div class="ww-tile">
+      <div class="d">금 11/06<br>⚠️ 한파</div>
+      <div class="range">12°<span class="lo">/4°</span></div>
+      <div class="rain2">☔ 1~3%</div>
+      <div class="desc">쾌청하지만 급격히 추워짐 — NSM-S v9</div>
     </div>
   </div>
-  <p class="weather-note">⚠️ 오늘 실시간 날씨 조회가 3회 재시도 모두 실패해 전날(11/2) 조회분의 예보로 대체 표시 — 대체로 양호하나 실안개 섞일 수 있음. 모레(목) 이후는 예보 범위 밖이라 다음 실행에서 재조회.</p>
+  <p class="weather-note">날씨 조회 정상 복구. 오늘(수)은 안개·흐림·실안개로 큰 지장 없음. 내일(목)은 아침 약한 비 후 쾌청. <b>⚠️ 모레(금, NSM-S v9일)는 최저 4°C까지 떨어지는 한파급 추위</b> — 미리 대비 필요.</p>
 </section>
 
 <section>
