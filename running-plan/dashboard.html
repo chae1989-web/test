@@ -462,19 +462,19 @@
 <p class="eyebrow">Running Plan · NSM 베이스 도입</p>
 <h1>러닝 대시보드</h1>
 <div class="route-rule"></div>
-<p class="week-range"><b>2026-11-21~11-27</b> · 🏁 하프마라톤 완주 · ⚠️ 2연속 미실시로 11/26 강등 조치</p>
+<p class="week-range"><b>2026-11-21~11-27</b> · 🏁 하프마라톤 완주 · 🎯 12/13 10K 재시도 레이스 발견</p>
 
 <section>
   <div class="section-title">오늘</div>
   <div class="today-card">
-    <div class="label">⚠️ 복귀 주간 5일차 — 2026-11-25 이지런</div>
-    <div class="workout-name">이지런 40min (HR≤145)</div>
+    <div class="label">🎯 12/13 10K 재시도 발견 — 2026-11-26 회복런</div>
+    <div class="workout-name">회복런 5km (HR≤135, 사용자가 직접 재편)</div>
     <div class="today-stats">
-      <div class="stat"><div class="k">11/24 결과</div><div class="v">활동 기록 없음 — NSM-S v9 미실시(FAIL), 11/23과 2연속 미실시</div></div>
-      <div class="stat"><div class="k">✅ 동적 조정 적용</div><div class="v">11/26 NSM-M v8 → 이지런40으로 강등(동적 주간 조정 규칙 2연속 미실시 트리거)</div></div>
-      <div class="stat"><div class="k">이번 주 ACWR</div><div class="v">약 0.69(안전 구간 하단 이탈, 저부하) — acute 32.16km/chronic 46.66</div></div>
+      <div class="stat"><div class="k">🎯 중대 발견</div><div class="v">12/3~12/12 10K 재시도(12/13, sub-40 목표) 빌드업이 이미 전부 등록돼 있었음</div></div>
+      <div class="stat"><div class="k">11/25 결과</div><div class="v">예정 외 NSM-M급 세션 수행 9.24km·46.18min·평균HR151 — 페이스 양호, HR 누적상승으로 경고</div></div>
+      <div class="stat"><div class="k">이번 주 ACWR</div><div class="v">약 0.92(안전 구간) — acute 43.04km/chronic 46.66</div></div>
     </div>
-    <div class="today-note">**어제(11/24) 채점**: 활동 기록 없음 — NSM-S v9 **미실시(FAIL)**. 11/23(회복런)에 이은 **2일 연속 미실시** 확정 — "동적 주간 조정 규칙"의 2+ 연속 미실시 트리거 충족, 남은 sub-threshold 세션(11/26 NSM-M v8)을 이지런으로 강등 조치 완료(`unschedule_workout`+`schedule_workout`으로 가민에 실제 반영). 11/24 미실시 자체는 익일 재배치를 검토했으나 11/26(당시 NSM-M v8)과 하드-하드 연속이 되어 버퍼 위반이고, 이미 강등 신호가 발생한 상태라 추가 하드 세션을 끼워넣지 않음 — 재배치하지 않고 사실만 기록. 오늘(11/25) 컨디션 데이터는 없어 조정 없이 예정된 이지런 40min 그대로 진행. ACWR이 0.69로 안전 구간(0.8-1.3) 하단을 이탈했으나 위험 신호는 아니고 단순 저부하 상태 — 복귀 주간 볼륨이 계획보다 크게 줄어든 상태로 계속 모니터링.</div>
+    <div class="today-note">**🎯 12/13 10K 재시도 레이스 확인**: `get_workouts` 전체 조회 중 12/5 판정 세션(1767684884)·12/11 프라이머(1767684885)가 2026-11-20에 생성돼 있었고, 12/3~12/12 전체 빌드업이 이미 스케줄 등록돼 있음을 발견 — **11/15 레이스 후 계속 "다음 목표 불명확"으로 안내해온 상태가 해소**됨, 목표는 10K sub-40 재시도로 추정(플랜A 4:00-4:01 출발/플랜B 40:30-40:59). 12/13 당일 워크아웃은 아직 미등록(11/8 HM처럼 레이스 주에 추가될 가능성) — 사용자 본인 확인 대기, plan.md "목표 레이스" 표에 사실로 기록. **동시에 사용자가 11/26~28 스케줄을 직접 재편**: 전일 자동화가 강등한 11/26 이지런이 다시 회복런5km로, 11/27·28의 NSM-L v8·이지런40 순서가 맞바뀜 — 되돌리지 않고 최종 스케줄 기준으로 진행. **어제(11/25) 채점**: 예정(이지런40)과 다른 "NSM mid(6min×5) v6" 세션 9.24km·46.18min·평균HR151bpm 수행 — 라이브러리에 "v6"이 없어 실측 기반 평가, 5세트 페이스는 4:15-4:21/km로 안정적이었으나 평균HR이 150→165bpm·최고HR이 161→176bpm까지 점진 상승하며 2세트부터 Soft Ceiling(167bpm)을 반복 초과 → **경고**. 오늘(11/26) 컨디션 데이터는 없어 조정 없이 재편된 회복런 5km 그대로 진행. ACWR은 0.92로 다시 안전 구간 내 복귀.</div>
   </div>
 </section>
 
@@ -483,30 +483,30 @@
   <div class="weather-strip">
     <div class="weather-tile">
       <div class="t">09:00</div>
-      <div class="temp">-2°</div>
-      <div class="hum">습도 52%</div>
-      <div class="rain">☔ 9%</div>
+      <div class="temp">7°</div>
+      <div class="hum">습도 80%</div>
+      <div class="rain">☔ 27%</div>
     </div>
     <div class="weather-tile">
       <div class="t">12:00</div>
-      <div class="temp">3°</div>
-      <div class="hum">습도 56%</div>
-      <div class="rain">☔ 12%</div>
+      <div class="temp">12°</div>
+      <div class="hum">습도 63%</div>
+      <div class="rain">☔ 13%</div>
     </div>
     <div class="weather-tile">
       <div class="t">15:00</div>
-      <div class="temp">7°</div>
-      <div class="hum">습도 56%</div>
-      <div class="rain">☔ 5%</div>
+      <div class="temp">14°</div>
+      <div class="hum">습도 58%</div>
+      <div class="rain">☔ 6%</div>
     </div>
     <div class="weather-tile">
       <div class="t">18:00</div>
-      <div class="temp">4°</div>
-      <div class="hum">습도 67%</div>
-      <div class="rain">☔ 6%</div>
+      <div class="temp">10°</div>
+      <div class="hum">습도 73%</div>
+      <div class="rain">☔ 7%</div>
     </div>
   </div>
-  <p class="weather-note">맑음 위주(최고7°C·최저-2°C) — 이지런 진행에 양호, 저녁엔 약한 비 가능성.</p>
+  <p class="weather-note">아침엔 약한 비가 간간이(최대27%) 섞이다 낮부터 쾌청, 최고14°C까지 올라 회복런엔 무난.</p>
 </section>
 
 <section>
@@ -518,8 +518,8 @@
     </div>
     <div class="box">
       <div class="k">이번 주(11/21~27) 계획</div>
-      <div class="v">약 32.16km(실측 반영)</div>
-      <div class="note">* ACWR≈0.69(안전 구간 하단 이탈, 저부하 — 위험 신호 아님). 11/23·24 2연속 미실시로 11/26 NSM-M v8을 이지런으로 강등 조치 완료. 다음 매크로 목표는 아직 불명확, 계속 관찰</div>
+      <div class="v">약 43.04km(실측 반영)</div>
+      <div class="note">* ACWR≈0.92(안전 구간). 🎯 12/13 10K 재시도(sub-40) 빌드업 전체 등록 확인 — 다음 목표 불명확 상태 해소. 11/26~28은 사용자가 직접 재편(회복런→NSM-L v8→이지런40)</div>
     </div>
   </div>
   <div class="week-list">
@@ -547,58 +547,58 @@
       <div class="day-workout"><div class="name">NSM-S v9 (3min×8-10)</div><div class="target">미실시 — 활동 기록 없음</div></div>
       <span class="chip score miss">FAIL</span>
     </div>
+    <div class="day-row is-past">
+      <div class="stripe type-subt"></div>
+      <div class="day-date">11/25<span class="dow">수</span></div>
+      <div class="day-workout"><div class="name">NSM mid(6min×5) v6 (예정 외)</div><div class="target">9.24km·46.18min·평균HR151(Soft Ceiling 반복 초과)</div></div>
+      <span class="chip score warn">경고</span>
+    </div>
     <div class="day-row is-today">
       <div class="stripe type-easy"></div>
-      <div class="day-date">11/25<span class="dow">수</span><span class="today-tag">오늘</span></div>
-      <div class="day-workout"><div class="name">이지런 40min (HR≤145)</div><div class="target">약 6.9km·40min 목표</div></div>
+      <div class="day-date">11/26<span class="dow">목</span><span class="today-tag">오늘</span></div>
+      <div class="day-workout"><div class="name">회복런 5km (HR≤135) <span style="font-size:10px;color:var(--tide);">사용자 재편</span></div><div class="target">5km 목표</div></div>
       <span class="chip easy">예정</span>
     </div>
     <div class="day-row">
-      <div class="stripe type-easy"></div>
-      <div class="day-date">11/26<span class="dow">목</span></div>
-      <div class="day-workout"><div class="name">이지런 40min (HR≤145) <span style="font-size:10px;color:var(--warn);">강등됨</span></div><div class="target">원래 NSM-M v8 → 2연속 미실시로 이지런 교체</div></div>
-      <span class="chip easy">예정</span>
-    </div>
-    <div class="day-row">
-      <div class="stripe type-easy"></div>
+      <div class="stripe type-subt"></div>
       <div class="day-date">11/27<span class="dow">금</span></div>
-      <div class="day-workout"><div class="name">이지 30min + 스트라이드 4×100m</div><div class="target">약 6.0km 목표</div></div>
-      <span class="chip easy">예정</span>
+      <div class="day-workout"><div class="name">NSM-L v8 (10min×3) <span style="font-size:10px;color:var(--tide);">재편</span></div><div class="target">페이스 4:25-4:29/km·3세트</div></div>
+      <span class="chip subt">예정</span>
     </div>
   </div>
-  <p style="font-size:11.5px;color:var(--text-faint);margin-top:8px;">※ <b>11/9~11/15주 최종</b>: 🏁 11/15 하프마라톤 완주(1:40:00, 경고) — 실제 43.52km, ACWR 최종 1.04(안전 구간). <b>11/16~20(계획 공백기)</b>: 자발적 러닝 3회, 그레이딩 제외. <b>⚠️ 11/23·24 2연속 미실시로 11/26 NSM-M v8을 이지런으로 강등</b>(동적 주간 조정 규칙 적용) — ACWR 0.69(저부하, 위험 신호 아님)로 하락, 다음 매크로 목표는 아직 불명확, 자동화는 임의로 단정하지 않고 계속 관찰.</p>
+  <p style="font-size:11.5px;color:var(--text-faint);margin-top:8px;">※ <b>11/9~11/15주 최종</b>: 🏁 11/15 하프마라톤 완주(1:40:00, 경고) — 실제 43.52km, ACWR 최종 1.04(안전 구간). <b>11/16~20(계획 공백기)</b>: 자발적 러닝 3회, 그레이딩 제외. <b>🎯 12/13 10K 재시도(sub-40) 빌드업 전체 발견</b> — 다음 목표 불명확 상태 해소. 11/23·24 2연속 미실시로 강등했으나 11/25 예정 외 세션 수행+사용자의 11/26~28 재편으로 ACWR 0.92(안전 구간) 복귀.</p>
 </section>
 
 <section>
   <div class="section-title">주간 날씨 (서울)</div>
   <div class="weekly-weather">
     <div class="ww-tile is-today">
-      <div class="d">수 11/25<br>오늘·이지런</div>
-      <div class="range">7°<span class="lo">/-2°</span></div>
-      <div class="rain2">☔ 4~12%</div>
-      <div class="desc">맑음 위주, 저녁 약한 비 가능성</div>
-    </div>
-    <div class="ww-tile">
-      <div class="d">목 11/26<br>이지런(강등)</div>
+      <div class="d">목 11/26<br>오늘·회복런</div>
       <div class="range">14°<span class="lo">/6°</span></div>
-      <div class="rain2">☔ 10~26%</div>
-      <div class="desc">기온 크게 상승, 오전 약한 비 간간이 후 쾌청</div>
+      <div class="rain2">☔ 6~27%</div>
+      <div class="desc">아침 약한 비 간간이 후 낮부터 쾌청</div>
     </div>
     <div class="ww-tile">
-      <div class="d">금 11/27<br>이지+스트라이드</div>
+      <div class="d">금 11/27<br>NSM-L v8</div>
       <div class="range">15°<span class="lo">/8°</span></div>
-      <div class="rain2">☔ 15~31%</div>
+      <div class="rain2">☔ 14~30%</div>
       <div class="desc">더 풀리며 아침 안개, 낮~저녁 약한 비 가능성</div>
     </div>
+    <div class="ww-tile">
+      <div class="d">토 11/28<br>이지런40</div>
+      <div class="range">8°<span class="lo">/1°</span></div>
+      <div class="rain2">☔ 3~20%</div>
+      <div class="desc">다시 쌀쌀해지며 오전 흐림 후 오후 쾌청</div>
+    </div>
   </div>
-  <p class="weather-note">오늘(수, 이지런)은 맑음 위주로 진행에 양호. 내일(목, 강등된 이지런)은 기온이 14°C까지 크게 오르며 오전 약한 비 후 쾌청. 모레(금, 이지+스트라이드)는 15°C까지 더 풀리지만 아침 안개와 낮~저녁 약한 비 가능성이 섞임.</p>
+  <p class="weather-note">오늘(목, 회복런)은 아침 약한 비 간간이 후 낮부터 쾌청, 최고14°C. 내일(금, NSM-L v8)은 15°C까지 더 풀리지만 아침 안개와 낮~저녁 약한 비 가능성. 모레(토, 이지런40)는 다시 쌀쌀해지며(최고8°C) 오전 흐림 후 오후 쾌청.</p>
 </section>
 
 <section>
   <div class="section-title">훈련 부하 (ACWR)</div>
   <div class="acwr-card">
     <p class="acwr-caption">급성:만성 부하비 = 이번 주 볼륨 ÷ 최근 4주 평균 볼륨. 초록 밴드(0.8–1.3)가 안전 구간, 점선이 고위험 기준(1.5)</p>
-    <svg class="acwr-chart" viewBox="0 0 600 200" role="img" aria-label="주간 ACWR 추이, 10/26주 최종 1.60(고위험), 11/2주 최종 1.51(고위험 경계), 11/9주(레이스 주) 최종 1.04(안전 구간), 11/21주(복귀 주) 추정 0.69(안전 구간 하단 이탈, 저부하)">
+    <svg class="acwr-chart" viewBox="0 0 600 200" role="img" aria-label="주간 ACWR 추이, 10/26주 최종 1.60(고위험), 11/2주 최종 1.51(고위험 경계), 11/9주(레이스 주) 최종 1.04(안전 구간), 11/21주(복귀 주) 추정 0.92(안전 구간)">
       <rect x="40" y="46.25" width="540" height="43.75" fill="var(--success-tint)" />
       <line x1="40" y1="160" x2="580" y2="160" stroke="var(--border)" stroke-width="1" />
       <line x1="40" y1="27.5" x2="580" y2="27.5" stroke="var(--miss)" stroke-width="1" stroke-dasharray="4 4" opacity="0.6" />
@@ -616,11 +616,11 @@
       <text x="310" y="62" text-anchor="middle" class="acwr-bar-label" fill="var(--success)">1.04</text>
       <text x="310" y="178" text-anchor="middle" class="acwr-axis-label" fill="var(--text-faint)">11/9</text>
 
-      <rect x="388" y="99.64" width="60" height="60.36" rx="3" fill="var(--text-faint)" />
-      <text x="418" y="93" text-anchor="middle" class="acwr-bar-label" fill="var(--text-faint)">0.69</text>
+      <rect x="388" y="79.52" width="60" height="80.48" rx="3" fill="var(--success)" />
+      <text x="418" y="73" text-anchor="middle" class="acwr-bar-label" fill="var(--success)">0.92</text>
       <text x="418" y="178" text-anchor="middle" class="acwr-axis-label" fill="var(--text-faint)">11/21</text>
     </svg>
-    <p class="weather-note" style="margin-top:2px;"><b>10/26주 최종 1.60·11/2주 최종 1.51 — 2주 연속 고위험대</b>였으나 둘 다 주중 추정보다 낮아짐. <b>🏁 11/9주(HM 레이스 주) 최종 1.04(안전 구간)</b> — 레이스 당일 페이스 붕괴로 볼륨이 추정보다 줄어 오히려 안전권 안착. <b>⚠️ 11/21주(복귀 주) 추정 0.69(안전 구간 하단 이탈, 저부하)</b> — 11/23·24 2연속 미실시로 11/26 NSM-M v8을 이지런으로 강등, 위험 신호는 아니나 계획 대비 볼륨이 크게 줄었음, chronic은 레이스 전 4주 평균(46.66) 그대로 유지.</p>
+    <p class="weather-note" style="margin-top:2px;"><b>10/26주 최종 1.60·11/2주 최종 1.51 — 2주 연속 고위험대</b>였으나 둘 다 주중 추정보다 낮아짐. <b>🏁 11/9주(HM 레이스 주) 최종 1.04(안전 구간)</b> — 레이스 당일 페이스 붕괴로 볼륨이 추정보다 줄어 오히려 안전권 안착. <b>🎯 11/21주(복귀 주) 추정 0.92(안전 구간)</b> — 11/23·24 2연속 미실시 후 11/25 예정 외 세션+사용자의 주간 재편으로 다시 안전 구간 복귀, chronic은 레이스 전 4주 평균(46.66) 그대로 유지. 🎯 12/13 10K 재시도 레이스 빌드업 확인.</p>
   </div>
 </section>
 
